@@ -1,0 +1,56 @@
+1. Interfaz de usuario (UI)
+
+Es la parte visual del sitio donde los clientes ven y navegan por los productos, el carrito y los formularios.
+
+Herramientas recomendadas:
+React (librería para construir interfaces de forma modular).
+
+2. Catálogo de productos
+
+Lista visual de productos con imagen, nombre, precio y botón de compra.
+
+Herramientas recomendadas:
+Estructura en React con componentes reutilizables.
+Datos cargados desde una base sencilla como JSON o desde una API.
+Filtros con JavaScript puro o librerías pequeñas como lodash para búsquedas.
+
+3. Carrito de compras
+
+Permite a los usuarios agregar productos, ver cantidades, precios totales y continuar al pago.
+
+Herramientas recomendadas:
+Estado local con React (useState/useContext) o Zustand.
+Guardado temporal con localStorage para mantener los datos si se recarga la página.
+
+4. Registro e inicio de sesión
+
+Permite a los clientes crear una cuenta, iniciar sesión y guardar historial.
+
+Herramientas recomendadas:
+Formularios con validación usando JavaScript.
+Autenticación básica con JWT en el backend.
+
+5. Checkout y pago
+
+Proceso de confirmar el pedido y realizar el pago.
+
+Herramientas recomendadas:
+Formularios simples en React.
+Backend ligero en Node.js para manejar la comunicación con la pasarela.
+
+6. Backend y gestión de datos
+
+Parte oculta del sitio que maneja usuarios, productos, pedidos y pagos.
+
+Herramientas recomendadas:
+Base de datos como MongoDB (con Mongoose) para almacenar productos y pedidos.
+REST API simple para conectar frontend con backend.
+
+7. Panel administrativo
+
+Sección privada para que el dueño de la tienda agregue o edite productos y revise pedidos.
+
+Herramientas recomendadas:
+Ruta protegida en React.
+Formularios conectados al backend para guardar cambios.
+Autenticación simple para limitar el acceso.

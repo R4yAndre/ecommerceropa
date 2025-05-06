@@ -1,0 +1,18 @@
+Catálogo de productos
+Mostrar un catálogo de productos con nombre y precio, luego permite al usuario ingresar el nombre de un producto para buscarlo. 
+Si el producto se encuentra (sin importar si se escribió con mayúsculas o minúsculas), se muestra su información. Si no se encuentra, se notifica al usuario.
+
+
+Carrito de compras
+Simular un carrito de compras. Muestra un catálogo de productos con nombre y precio, permite al usuario seleccionar productos e indicar cuántas 
+unidades desea agregar al carrito, y al finalizar, calcula el total a pagar y muestra un resumen de la compra con las cantidades y subtotales por producto.
+
+
+Registro e inicio de sesión
+Permitir al usuario registrarse con un nombre y una contraseña, y luego le presenta un menú para intentar iniciar sesión. 
+Si el usuario ingresa correctamente sus credenciales, se inicia sesión; de lo contrario, puede intentarlo de nuevo o salir del programa.
+
+
+Panel administrativo
+Simular un panel administrativo para gestionar productos de una tienda. Comienza con un catálogo de cinco productos ya definidos, y permite al usuario 
+administrador agregar un nuevo producto (si hay espacio) o reemplazar uno existente. El ciclo se repite hasta que el usuario elige salir del panel.
