@@ -1,0 +1,104 @@
+Lógica
+
+Mostrar un catálogo de productos con nombre y precio, luego permite al usuario ingresar el nombre de un producto para buscarlo. 
+Si el producto se encuentra (sin importar si se escribió con mayúsculas o minúsculas), se muestra su información. Si no se encuentra, se notifica al usuario.
+
+
+Algotirmo
+
+Catálogo de productos: 
+
+1. Declarar variables para almacenar el nombre y precio de cinco productos.
+
+2. Declarar una variable para ingresar el nombre del producto a buscar.
+
+3. Declarar una variable lógica para indicar si el producto fue encontrado (inicialmente es falso).
+
+4. Asignar los nombres y precios a los productos (en este caso, 5).
+
+5. Mostrar en pantalla el catálogo completo con nombres y precios.
+
+6. Pedir al usuario que ingrese el nombre de un producto que desea buscar.
+
+7. Comparar el nombre ingresado con cada uno de los cinco productos (ignorando mayúsculas o minúsculas).
+
+8. Si se encuentra coincidencia:
+
+    8.1 Mostrar el producto y su precio.
+
+    8.2 Cambiar la variable encontrado a verdadero.
+
+9. Si no se encuentra ninguna coincidencia después de revisar todos los productos:
+
+    9.2 Mostrar mensaje de "Producto no encontrado".
+
+
+Pseudocódigo
+
+    Proceso CatalogoSimple
+	
+        Definir nombre1, nombre2, nombre3, nombre4, nombre5 Como Cadena
+        Definir precio1, precio2, precio3, precio4, precio5 Como Real
+        Definir busqueda Como Cadena
+        Definir encontrado Como Logico
+        encontrado <- Falso
+        
+        // Cargar productos
+        nombre1 <- "Polo"
+        precio1 <- 25.00
+        
+        nombre2 <- "Pantalon"
+        precio2 <- 60.00
+        
+        nombre3 <- "Casaca"
+        precio3 <- 90.00
+        
+        nombre4 <- "Gorra"
+        precio4 <- 15.00
+        
+        nombre5 <- "Zapatos"
+        precio5 <- 120.00
+        
+        // Mostrar catálogo
+        Escribir "CATÁLOGO DE PRODUCTOS:"
+        Escribir "1. ", nombre1, " - S/ ", precio1
+        Escribir "2. ", nombre2, " - S/ ", precio2
+        Escribir "3. ", nombre3, " - S/ ", precio3
+        Escribir "4. ", nombre4, " - S/ ", precio4
+        Escribir "5. ", nombre5, " - S/ ", precio5
+        
+        // Buscar producto
+        Escribir ""
+        Escribir "Ingrese el nombre del producto a buscar:"
+        Leer busqueda
+        
+        Si Mayusculas(busqueda) = Mayusculas(nombre1) Entonces
+            Escribir "Producto encontrado: ", nombre1, " - S/ ", precio1
+            encontrado <- Verdadero
+        FinSi
+        
+        Si Mayusculas(busqueda) = Mayusculas(nombre2) Entonces
+            Escribir "Producto encontrado: ", nombre2, " - S/ ", precio2
+            encontrado <- Verdadero
+        FinSi
+        
+        Si Mayusculas(busqueda) = Mayusculas(nombre3) Entonces
+            Escribir "Producto encontrado: ", nombre3, " - S/ ", precio3
+            encontrado <- Verdadero
+        FinSi
+        
+        Si Mayusculas(busqueda) = Mayusculas(nombre4) Entonces
+            Escribir "Producto encontrado: ", nombre4, " - S/ ", precio4
+            encontrado <- Verdadero
+        FinSi
+        
+        Si Mayusculas(busqueda) = Mayusculas(nombre5) Entonces
+            Escribir "Producto encontrado: ", nombre5, " - S/ ", precio5
+            encontrado <- Verdadero
+        FinSi
+        
+        Si No encontrado Entonces
+            Escribir "Producto no encontrado."
+        FinSi
+	
+    FinProceso

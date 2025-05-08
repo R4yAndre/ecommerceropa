@@ -1,0 +1,86 @@
+Lógica
+
+Permitir al usuario registrarse con un nombre y una contraseña, y luego le presenta un menú para intentar iniciar sesión. 
+Si el usuario ingresa correctamente sus credenciales, se inicia sesión; de lo contrario, puede intentarlo de nuevo o salir del programa.
+
+
+Algoritmo
+
+1. Declarar variables para guardar el nombre de usuario y la contraseña del registro.
+
+2. Declarar variables para ingresar el usuario y la contraseña que se usen al intentar iniciar sesión.
+
+3. Declarar una variable para controlar la opción del menú y otra para saber si la sesión fue iniciada (inicialmente en falso).
+
+4. Solicitar al usuario crear un nombre de usuario y una contraseña para registrarse, y guardar esos datos.
+
+5. Mostrar un mensaje de confirmación del registro.
+
+6. Mostrar un menú que permita:
+
+    Opción 1: intentar iniciar sesión,
+
+    Opción 2: salir del programa.
+
+7. Si el usuario elige iniciar sesión:
+
+    7.1 Solicitar el nombre de usuario y la contraseña.
+
+    7.2 Comparar ambos valores con los datos registrados.
+
+    7.3 Si coinciden, mostrar un mensaje de bienvenida y marcar que la sesión ha sido iniciada.
+
+    7.4 Si no coinciden, mostrar un mensaje de error.
+
+8. Repetir el menú mientras el usuario no haya iniciado sesión ni elegido salir.
+
+9. Al salir del ciclo, si la sesión no fue iniciada, mostrar un mensaje indicando que no se logró iniciar sesión.
+
+
+Pseudocógigo
+
+Proceso RegistroYLogin
+
+        Definir usuarioGuardado, claveGuardada Como Cadena
+        Definir usuarioIngresado, claveIngresada Como Cadena
+        Definir opcion Como Entero
+        Definir sesionIniciada Como Logico
+        sesionIniciada <- Falso
+
+        // Registro
+        Escribir "REGISTRO DE USUARIO"
+        Escribir "Cree un nombre de usuario:"
+        Leer usuarioGuardado
+        Escribir "Cree una contraseña:"
+        Leer claveGuardada
+        Escribir "Registro exitoso."
+
+        // Menú de inicio de sesión
+        Repetir
+            Escribir ""
+            Escribir "----- MENÚ -----"
+            Escribir "1. Iniciar sesión"
+            Escribir "2. Salir"
+            Escribir "Seleccione una opción:"
+            Leer opcion
+
+            Si opcion = 1 Entonces
+                Escribir "Ingrese su usuario:"
+                Leer usuarioIngresado
+                Escribir "Ingrese su contraseña:"
+                Leer claveIngresada
+
+                Si usuarioIngresado = usuarioGuardado Y claveIngresada = claveGuardada Entonces
+                    Escribir "Inicio de sesión exitoso. ¡Bienvenido, ", usuarioGuardado, "!"
+                    sesionIniciada <- Verdadero
+                Sino
+                    Escribir "Usuario o contraseña incorrectos. Intente nuevamente."
+                FinSi
+            FinSi
+        Hasta Que opcion = 2 O sesionIniciada = Verdadero
+
+        Si No sesionIniciada Entonces
+            Escribir "Sesión no iniciada. Saliendo del programa."
+        FinSi
+
+    FinProceso

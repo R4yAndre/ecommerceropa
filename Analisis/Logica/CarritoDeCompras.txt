@@ -1,0 +1,119 @@
+Lógica
+
+Simular un carrito de compras. Muestra un catálogo de productos con nombre y precio, permite al usuario seleccionar productos e indicar cuántas 
+unidades desea agregar al carrito, y al finalizar, calcula el total a pagar y muestra un resumen de la compra con las cantidades y subtotales por producto.
+
+
+Algoritmo
+
+1. Declarar variables para los nombres y precios los productos (5 en este caso).
+
+2. Declarar variables para llevar el conteo de cuántas unidades se agregan al carrito de cada producto (inicialmente en 0).
+
+3. Declarar variables para manejar la selección del producto, la cantidad a agregar y el total a pagar.
+
+4. Asignar nombres y precios a cada uno de los productos.
+
+5. Iniciar las cantidades de cada producto en cero.
+
+6. Mostrar repetidamente el catálogo de productos, dando la opción al usuario de elegir un producto por número o finalizar la compra con la opción 0.
+
+7. Si el usuario selecciona un producto válido:
+
+    7.1 Pedir cuántas unidades desea agregar.
+
+    7.2 Sumar esa cantidad al conteo del producto correspondiente.
+
+8. Repetir el proceso hasta que el usuario elija la opción 0.
+
+9. Calcular el total multiplicando la cantidad de cada producto por su precio y sumando los resultados.
+
+10. Mostrar un resumen del carrito indicando los productos agregados, sus cantidades, subtotales y el total a pagar.
+
+
+Pseudocódigo
+
+    Proceso CarritoDeCompras
+
+        Definir nombre1, nombre2, nombre3, nombre4, nombre5 Como Cadena
+        Definir precio1, precio2, precio3, precio4, precio5 Como Real
+        Definir cant1, cant2, cant3, cant4, cant5 Como Entero
+        Definir opcion, cantidad Como Entero
+        Definir total Como Real
+
+        // Inicializar productos
+        nombre1 <- "Polo"
+        precio1 <- 25.00
+
+        nombre2 <- "Pantalon"
+        precio2 <- 60.00
+
+        nombre3 <- "Casaca"
+        precio3 <- 90.00
+
+        nombre4 <- "Gorra"
+        precio4 <- 15.00
+
+        nombre5 <- "Zapatos"
+        precio5 <- 120.00
+
+        // Inicializar cantidades
+        cant1 <- 0
+        cant2 <- 0
+        cant3 <- 0
+        cant4 <- 0
+        cant5 <- 0
+
+        Repetir
+            // Mostrar productos
+            Escribir "------ CATÁLOGO DE PRODUCTOS ------"
+            Escribir "1. ", nombre1, " - S/ ", precio1
+            Escribir "2. ", nombre2, " - S/ ", precio2
+            Escribir "3. ", nombre3, " - S/ ", precio3
+            Escribir "4. ", nombre4, " - S/ ", precio4
+            Escribir "5. ", nombre5, " - S/ ", precio5
+            Escribir "0. Finalizar compra"
+            Escribir "Seleccione un producto por número (0 para salir):"
+            Leer opcion
+
+            Si opcion >= 1 Y opcion <= 5 Entonces
+                Escribir "¿Cuántas unidades desea agregar?"
+                Leer cantidad
+
+                Segun opcion Hacer
+                    1: cant1 <- cant1 + cantidad
+                    2: cant2 <- cant2 + cantidad
+                    3: cant3 <- cant3 + cantidad
+                    4: cant4 <- cant4 + cantidad
+                    5: cant5 <- cant5 + cantidad
+                FinSegun
+
+            FinSi
+
+        Hasta Que opcion = 0
+
+        // Calcular y mostrar el total
+        total <- (cant1 * precio1) + (cant2 * precio2) + (cant3 * precio3) + (cant4 * precio4) + (cant5 * precio5)
+
+        Escribir ""
+        Escribir "------ RESUMEN DEL CARRITO ------"
+        Si cant1 > 0 Entonces
+            Escribir nombre1, " x", cant1, " = S/ ", cant1 * precio1
+        FinSi
+        Si cant2 > 0 Entonces
+            Escribir nombre2, " x", cant2, " = S/ ", cant2 * precio2
+        FinSi
+        Si cant3 > 0 Entonces
+            Escribir nombre3, " x", cant3, " = S/ ", cant3 * precio3
+        FinSi
+        Si cant4 > 0 Entonces
+            Escribir nombre4, " x", cant4, " = S/ ", cant4 * precio4
+        FinSi
+        Si cant5 > 0 Entonces
+            Escribir nombre5, " x", cant5, " = S/ ", cant5 * precio5
+        FinSi
+
+        Escribir "---------------------------------"
+        Escribir "Total a pagar: S/ ", total
+
+    FinProceso

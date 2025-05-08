@@ -1,0 +1,159 @@
+Lógica
+
+Simular un panel administrativo para gestionar productos de una tienda. Comienza con un catálogo de cinco productos ya definidos, y permite al usuario 
+administrador agregar un nuevo producto (si hay espacio) o reemplazar uno existente. El ciclo se repite hasta que el usuario elige salir del panel.
+
+
+Algoritmo
+
+1. Declarar variables para almacenar los nombres y precios de cinco productos predefinidos, más un nombre y precio nuevo.
+
+2. Declarar una variable para saber cuántos productos hay actualmente (inicialmente 5).
+
+3. Mostrar los cinco productos con su precio al inicio de cada ciclo.
+
+4. Mostrar un menú con tres opciones:
+
+    Agregar un nuevo producto.
+
+    Reemplazar un producto existente.
+
+    Salir del programa.
+
+5. Si elige agregar producto:
+
+    5.1 Pedir el nombre y precio del nuevo producto.
+
+    5.2 Aumentar en uno el conteo de productos.
+
+    5.3 Asignar el nuevo nombre y precio a la primera posición vacía entre las cinco.
+
+    5.4 Mostrar mensaje de confirmación.
+
+6. Si elige reemplazar producto:
+
+    6.1 Pedir el número del producto que se quiere reemplazar (entre 1 y 5).
+
+    6.2 Si es válido, solicitar el nuevo nombre y precio.
+
+    6.3 Reemplazar el producto correspondiente.
+
+    6.4 Mostrar mensaje de confirmación.
+
+    6.5 Si no es válido, avisar con un mensaje de error.
+
+7. Repetir el menú hasta que el usuario elija la opción de salir.
+
+8. Mostrar mensaje de salida del panel administrativo.
+
+
+Pseudocódigo
+
+    Proceso AdministrarProductos
+
+        Definir nombre1, nombre2, nombre3, nombre4, nombre5, nombreNuevo Como Cadena
+        Definir precio1, precio2, precio3, precio4, precio5, precioNuevo Como Real
+        Definir opcion, posReemplazo Como Entero
+        Definir cantidadActual Como Entero
+        cantidadActual <- 5
+
+        // Productos predefinidos
+        nombre1 <- "Polo"
+        precio1 <- 25.00
+
+        nombre2 <- "Pantalon"
+        precio2 <- 60.00
+
+        nombre3 <- "Casaca"
+        precio3 <- 90.00
+
+        nombre4 <- "Gorra"
+        precio4 <- 15.00
+
+        nombre5 <- "Zapatos"
+        precio5 <- 120.00
+
+        Repetir
+            // Mostrar catálogo
+            Escribir ""
+            Escribir "----- CATÁLOGO ACTUAL -----"
+            Escribir "1. ", nombre1, " - S/ ", precio1
+            Escribir "2. ", nombre2, " - S/ ", precio2
+            Escribir "3. ", nombre3, " - S/ ", precio3
+            Escribir "4. ", nombre4, " - S/ ", precio4
+            Escribir "5. ", nombre5, " - S/ ", precio5
+
+            // Menú
+            Escribir ""
+            Escribir "----- MENÚ DE ADMINISTRADOR -----"
+            Escribir "1. Agregar nuevo producto"
+            Escribir "2. Reemplazar un producto existente"
+            Escribir "3. Salir"
+            Escribir "Seleccione una opción:"
+            Leer opcion
+
+            Si opcion = 1 Entonces
+                Escribir "Ingrese el nombre del nuevo producto:"
+                Leer nombreNuevo
+                Escribir "Ingrese el precio del nuevo producto:"
+                Leer precioNuevo
+
+                // Agregar el nuevo producto al catálogo
+                cantidadActual <- cantidadActual + 1
+
+                Si cantidadActual = 1 Entonces
+                    nombre1 <- nombreNuevo
+                    precio1 <- precioNuevo
+                Sino
+                    Si cantidadActual = 2 Entonces
+                        nombre2 <- nombreNuevo
+                        precio2 <- precioNuevo
+                    Sino
+                        Si cantidadActual = 3 Entonces
+                            nombre3 <- nombreNuevo
+                            precio3 <- precioNuevo
+                        Sino
+                            Si cantidadActual = 4 Entonces
+                                nombre4 <- nombreNuevo
+                                precio4 <- precioNuevo
+                            Sino
+                                nombre5 <- nombreNuevo
+                                precio5 <- precioNuevo
+                            FinSi
+                        FinSi
+                    FinSi
+                FinSi
+
+                Escribir "Producto agregado correctamente."
+
+            Sino
+                Si opcion = 2 Entonces
+                    Escribir "¿Qué producto desea reemplazar? (1-5):"
+                    Leer posReemplazo
+
+                    Si posReemplazo >= 1 Y posReemplazo <= 5 Entonces
+                        Escribir "Ingrese el nuevo nombre del producto:"
+                        Leer nombreNuevo
+                        Escribir "Ingrese el nuevo precio:"
+                        Leer precioNuevo
+
+                        Segun posReemplazo Hacer
+                            1: nombre1 <- nombreNuevo; precio1 <- precioNuevo
+                            2: nombre2 <- nombreNuevo; precio2 <- precioNuevo
+                            3: nombre3 <- nombreNuevo; precio3 <- precioNuevo
+                            4: nombre4 <- nombreNuevo; precio4 <- precioNuevo
+                            5: nombre5 <- nombreNuevo; precio5 <- precioNuevo
+                        FinSegun
+
+                        Escribir "Producto reemplazado correctamente."
+                    Sino
+                        Escribir "Número inválido. Debe ser entre 1 y 5."
+                    FinSi
+                FinSi
+            FinSi
+
+        Hasta Que opcion = 3
+
+        Escribir "Saliendo del panel de administración."
+
+    FinProceso
