@@ -1,10 +1,8 @@
-Para iniciar con el desarollo de una página de e-commerce enfocada en ropa para un negocio pequeño, primero se definen las funciones básicas que se necesitan, 
-como mostrar productos, permitir búsquedas y filtros, gestionar un carrito de compras, realizar pagos y administrar los pedidos. 
-Se estructura el sitio dividiendo la parte visual de la lógica interna, organizando todo de forma clara y funcional. Se diseña una interfaz sencilla, rápida y adaptable a celulares, 
-donde los productos se muestran con sus detalles y opciones disponibles. 
-El sistema de compra permite agregar productos, calcular totales y completar pagos de forma segura. Los usuarios pueden registrarse, ver su historial y gestionar sus datos, 
-mientras que el administrador puede controlar el inventario y pedidos desde una sección especial. También se consideran aspectos técnicos como la carga rápida, la seguridad de los 
-datos, el posicionamiento en buscadores y la conexión con herramientas de análisis o redes sociales, pero no es una
-prioridad al momento. 
-Finalmente, se planea cómo publicar la web en línea y mantenerla activa, todo enfocado en que sea eficiente, clara y fácil de usar tanto para el cliente como para el dueño 
-de la tienda.
+Para plantear un ecommerce de ropa de una pequeña empresa de forma eficiente y organizada, es fundamental dividir su estructura en módulos, lo que permite gestionar cada parte 
+del negocio de forma clara y escalable. El módulo de productos se encarga de registrar, mostrar y actualizar la información de cada prenda (nombre, precio, stock, etc.), facilitando 
+el control del inventario. El módulo de usuarios gestiona el registro, inicio de sesión y perfil de los clientes, lo que permite personalizar la experiencia, además de permitir el 
+registro de administradores para su uso como panel de gestión. El módulo de carrito de compras permite a los usuarios seleccionar productos, ajustar cantidades y visualizar el total 
+antes de comprar. El módulo de cupones y descuentos permite aplicar promociones que incentiven las ventas, mostrando códigos válidos y sus condiciones. El módulo de órdenes procesa 
+las compras realizadas, registrando la información del pedido, el estado de envío y el historial del cliente. Por último, el módulo de notificaciones mejora la comunicación con el 
+cliente, enviando alertas sobre nuevos productos, confirmaciones de compra y promociones. Implementar estos módulos de forma sencilla consiste en trabajar con estructuras separadas 
+para cada uno, facilitando su revisión y mejora sin afectar el funcionamiento general del sistema.

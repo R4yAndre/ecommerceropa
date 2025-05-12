@@ -1,56 +1,82 @@
-1. Interfaz de usuario (UI)
+1. Gestión de Productos
 
-Es la parte visual del sitio donde los clientes ven y navegan por los productos, el carrito y los formularios.
+Catálogo de productos: Lista de ropa con nombre, imagen, precio, stock y talla.
+    Herramientas: JSON o arrays, DOM JS para renderizado dinámico.
 
-Herramientas recomendadas:
-React (librería para construir interfaces de forma modular).
+Filtrado y búsqueda: Buscar por nombre, categoría o precio.
+    Herramientas: JS con filter() y includes().
 
-2. Catálogo de productos
+2. Gestión de Usuarios
 
-Lista visual de productos con imagen, nombre, precio y botón de compra.
+Registro e inicio de sesión: Crear cuenta con email y contraseña.
+    Herramientas: LocalStorage, validación JS básica.
 
-Herramientas recomendadas:
-Estructura en React con componentes reutilizables.
-Datos cargados desde una base sencilla como JSON o desde una API.
-Filtros con JavaScript puro o librerías pequeñas como lodash para búsquedas.
+Gestión de sesión activa: Mantener al usuario logueado durante la navegación.
+    Herramientas: sessionStorage o cookies básicas.
 
-3. Carrito de compras
+3. Carrito de Compras
 
-Permite a los usuarios agregar productos, ver cantidades, precios totales y continuar al pago.
+Agregar y eliminar productos: Con opción de modificar cantidades.
+    Herramientas: Array de carrito, push() y splice() en JS.
 
-Herramientas recomendadas:
-Estado local con React (useState/useContext) o Zustand.
-Guardado temporal con localStorage para mantener los datos si se recarga la página.
 
-4. Registro e inicio de sesión
+Resumen de compra: Subtotal, envío, impuestos y total.
+    Herramientas: JS simple para cálculos, DOM para mostrarlo.
 
-Permite a los clientes crear una cuenta, iniciar sesión y guardar historial.
+4. Método de Pago
 
-Herramientas recomendadas:
-Formularios con validación usando JavaScript.
-Autenticación básica con JWT en el backend.
+Selección de método: Tarjeta de débito, crédito o pago móvil (simulado).
+    Herramientas: Formularios HTML, validaciones JS.
 
-5. Checkout y pago
+Validación de datos: Solo estructura (no conexión real).
+    Herramientas: Regex JS para validar tarjeta o texto.
 
-Proceso de confirmar el pedido y realizar el pago.
+5. Cupones y Descuentos
 
-Herramientas recomendadas:
-Formularios simples en React.
-Backend ligero en Node.js para manejar la comunicación con la pasarela.
+Aplicación de cupones: Validación de códigos de un solo uso o generales.
+    Herramientas: Objetos en JS, lógica condicional, LocalStorage.
 
-6. Backend y gestión de datos
+6. Gestión de Pedidos
 
-Parte oculta del sitio que maneja usuarios, productos, pedidos y pagos.
+Confirmación y seguimiento: Mostrar número de pedido y estado (en camino, entregado).
+    Herramientas: Objeto o array de pedidos, temporizador para simular cambio de estado.
 
-Herramientas recomendadas:
-Base de datos como MongoDB (con Mongoose) para almacenar productos y pedidos.
-REST API simple para conectar frontend con backend.
+Gestión de cambios: Modificar, cancelar o cambiar dirección.
+    Herramientas: Menú con opciones JS, actualizaciones del pedido en arrays.
 
-7. Panel administrativo
+7. Notificaciones
 
-Sección privada para que el dueño de la tienda agregue o edite productos y revise pedidos.
+Pop-ups y banners: Mostrar promociones, avisos o nuevos ingresos.
+    Herramientas: setTimeout(), alert(), modales con JS y CSS.
 
-Herramientas recomendadas:
-Ruta protegida en React.
-Formularios conectados al backend para guardar cambios.
-Autenticación simple para limitar el acceso.
+Suscripción a novedades: Pedir correo opcional para recibir avisos.
+    Herramientas: Formularios simples con validación, LocalStorage.
+
+8. Inventario
+
+Monitoreo de stock: Alerta cuando stock es bajo.
+    Herramientas: Lógica condicional en JS para mostrar mensaje.
+
+Historial de movimientos: Entrada y salida simulada de productos.
+    Herramientas: Arrays con fechas y operaciones registradas.
+
+9. Dashboard Administrativo
+
+Panel para modificar catálogo: Agregar, editar o eliminar productos.
+    Herramientas: Menú con opciones, inputs en JS, manipulación del array del catálogo.
+
+10. Responsividad y Navegación
+
+Menú dinámico: Para cambiar entre secciones (catálogo, carrito, cuenta).
+    Herramientas: addEventListener, display: none/block en CSS controlado por JS.
+
+Carga condicional de contenido: Mostrar solo la sección activa.
+    Herramientas: JS con control de visibilidad por clases.
+
+11. Interfaz de Usuario (UI)
+
+Diseño limpio y accesible: Uso de tipografía legible, buen contraste de colores, botones claros y organizados para facilitar la navegación.
+    Herramientas: CSS con clases reutilizables, Flexbox o Grid para estructurar contenido, fuentes legibles (como sans-serif), paleta de colores suaves y consistentes.
+
+Retroalimentación visual: Animaciones simples al agregar al carrito, validar formularios o aplicar cupones.
+    Herramientas: classList.add() para mostrar mensajes temporales con JS, transition en CSS para efectos suaves.
