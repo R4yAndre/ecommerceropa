@@ -1,0 +1,96 @@
+Lógica
+
+El programa simula un sistema de inventario de una tienda de ropa, mostrando cinco productos con sus respectivos niveles de stock. Si uno de los productos (por ejemplo, el pantalón) 
+tiene bajo stock (≤ 5 unidades), se activa una alerta. El sistema brinda dos opciones al usuario: (1) ver el historial de ingresos y salidas de todos los productos, donde se 
+mostrará que en el caso del producto en alerta, la última salida fue superior a su última entrada, lo cual explica el bajo stock. Tras mostrar el historial, el programa vuelve 
+al menú para permitir una nueva decisión. (2) Atender la alerta pendiente, lo que implica notificar que la reposición del producto con bajo stock será realizada. Al atender la 
+alerta, el programa finaliza.
+
+
+Algoritmo
+
+1. Declarar variables para productos y stock.
+
+2. Inicializar productos y niveles de stock.
+
+3. Detectar producto con bajo stock (≤ 5).
+
+4. Mostrar menú con dos opciones:
+    Ver historial de ingreso/salida.
+    Atender alerta.
+
+5. Si elige ver historial, mostrar datos simulados y volver al menú.
+
+6. Si elige atender alerta, mostrar mensaje de reposición y finalizar.
+
+
+Pseudocódigo
+
+Proceso InventarioConHistorialYAlerta
+	
+    Definir nombre1, nombre2, nombre3, nombre4, nombre5 Como Cadena
+    Definir stock1, stock2, stock3, stock4, stock5 Como Entero
+    Definir opcion Como Entero
+    Definir alertaAtendida Como Logico
+	
+    // Inicializar variables
+    nombre1 <- "Polo"
+    stock1 <- 10
+	
+    nombre2 <- "Pantalon"
+    stock2 <- 4  // Bajo stock (alerta)
+	
+    nombre3 <- "Casaca"
+    stock3 <- 8
+	
+    nombre4 <- "Gorra"
+    stock4 <- 20
+	
+    nombre5 <- "Zapatos"
+    stock5 <- 7
+	
+    alertaAtendida <- Falso
+	
+    // Mostrar inventario
+    Escribir "----- INVENTARIO DE PRODUCTOS -----"
+    Escribir nombre1, ": ", stock1, " unidades"
+    Escribir nombre2, ": ", stock2, " unidades"
+    Escribir nombre3, ": ", stock3, " unidades"
+    Escribir nombre4, ": ", stock4, " unidades"
+    Escribir nombre5, ": ", stock5, " unidades"
+	
+    // Si hay alerta
+    Si stock2 <= 5 Entonces
+        Repetir
+            Escribir ""
+            Escribir "¡ALERTA! Bajo stock en: ", nombre2, " (", stock2, " unidades)"
+            Escribir "¿Qué desea hacer?"
+            Escribir "1. Ver historial de ingreso y salida de productos"
+            Escribir "2. Atender alerta pendiente"
+            Leer opcion
+			
+            Si opcion = 1 Entonces
+                Escribir ""
+                Escribir "----- HISTORIAL DE PRODUCTOS -----"
+                Escribir nombre1, ": Ingreso: 15 - Salida: 5"
+                Escribir nombre2, ": Ingreso: 5 - Salida: 8" // Más salida que ingreso
+                Escribir nombre3, ": Ingreso: 10 - Salida: 2"
+                Escribir nombre4, ": Ingreso: 25 - Salida: 5"
+                Escribir nombre5, ": Ingreso: 12 - Salida: 5"
+                Escribir ""
+                Escribir "Presione ENTER para volver al menú..."
+            FinSi
+			
+            Si opcion = 2 Entonces
+                Escribir ""
+                Escribir "Reposición del producto ", nombre2, " ha sido notificada al proveedor."
+                Escribir "Se atenderá la alerta lo antes posible."
+                alertaAtendida <- Verdadero
+            FinSi
+        Hasta Que alertaAtendida = Verdadero
+    FinSi
+	
+    Escribir ""
+    Escribir "Proceso finalizado."
+	
+FinProceso

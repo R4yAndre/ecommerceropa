@@ -1,0 +1,41 @@
+Lógica
+
+Se simula un pop-up dentro de una tienda en línea de ropa, el cual aparece ofreciendo al usuario la posibilidad de ingresar su correo electrónico para recibir notificaciones 
+sobre nuevos ingresos de productos. Esta acción es totalmente opcional: si el usuario escribe un correo válido, se le agradece por suscribirse; si escribe "NO", el programa 
+interpreta que desea cerrar el pop-up sin suscribirse, mostrando un mensaje de cierre. En ambos casos, el programa termina luego de mostrar el mensaje correspondiente.
+
+
+Algoritmo
+
+1. Declarar variable para el correo.
+
+2. Mostrar mensaje simulando el pop-up.
+
+3. Leer lo ingresado por el usuario.
+
+4. Si lo ingresado es "NO", mostrar mensaje de cierre del pop-up.
+
+5. Si no es "NO", considerar que se trata de un correo, agradecer y mostrar mensaje de suscripción exitosa.
+
+
+Pseudocódigo
+
+Proceso PopUpSuscripcionCorreo
+
+    Definir correo Como Cadena
+
+    Escribir "----------------------------------------------"
+    Escribir "¿Deseas recibir notificaciones de nuevos ingresos?"
+    Escribir "Ingresa tu correo electrónico o escribe NO para cerrar"
+    Escribir "----------------------------------------------"
+    Leer correo
+
+    Si Mayusculas(correo) = "NO" Entonces
+        Escribir "Pop-up cerrado. No recibirás notificaciones."
+    Sino
+        Escribir "¡Gracias por suscribirte! Te notificaremos a ", correo
+    FinSi
+
+    Escribir "Fin del proceso."
+
+FinProceso

@@ -1,0 +1,61 @@
+Lógica
+
+Se simula un pop-up en una tienda en línea de ropa, informando al usuario que ha recibido un cupón de descuento exclusivo por ser nuevo cliente. Se le consulta si 
+desea aceptarlo: si responde "SI", se le muestra un código de un solo uso para su siguiente compra y el pop-up se cierra. Si responde "NO", se le advierte que el cupón 
+desaparecerá. En ese momento, se le vuelve a preguntar si está seguro. Si responde "SI" a esta advertencia, el pop-up se cierra definitivamente sin guardar el cupón. Si 
+responde "NO", se regresa a la primera pregunta, repitiendo el proceso hasta que el usuario tome una decisión definitiva.
+
+
+Algoritmo
+
+1. Declarar variable de respuesta.
+
+2. Mostrar mensaje de cupón de bienvenida.
+
+3. Leer respuesta del usuario.
+
+4. Si responde "SI", mostrar código de descuento y cerrar.
+
+5. Si responde "NO", mostrar advertencia de pérdida del cupón.
+
+6. Leer nueva respuesta.
+
+7. Si responde "SI" a la advertencia, cerrar sin cupón.
+
+8. Si responde "NO" a la advertencia, volver al paso 2.
+
+9. Repetir hasta que el cupón sea aceptado o rechazado definitivamente.
+
+
+Pseudocódigo
+
+Proceso PopUpCuponDescuento
+
+    Definir respuesta Como Cadena
+    Definir seguro Como Cadena
+    Definir codigoCupon Como Cadena
+    codigoCupon <- "NUEVO10"
+
+    Repetir
+        Escribir "--------------------------------------------------"
+        Escribir "¡Felicidades! Tienes un cupón de descuento por ser nuevo usuario."
+        Escribir "¿Deseas reclamarlo? (SI / NO)"
+        Escribir "--------------------------------------------------"
+        Leer respuesta
+
+        Si Mayusculas(respuesta) = "SI" Entonces
+            Escribir "Tu código de descuento es: ", codigoCupon
+            Escribir "Guárdalo para tu siguiente compra. ¡Gracias!"
+        Sino
+            Escribir "¿Estás seguro? Si continúas, el cupón desaparecerá. (SI / NO)"
+            Leer seguro
+
+            Si Mayusculas(seguro) = "SI" Entonces
+                Escribir "Has rechazado el cupón. Pop-up cerrado."
+            FinSi
+        FinSi
+    Hasta Que Mayusculas(respuesta) = "SI" O (Mayusculas(respuesta) = "NO" Y Mayusculas(seguro) = "SI")
+
+    Escribir "Fin del proceso."
+
+FinProceso

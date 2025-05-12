@@ -1,0 +1,82 @@
+Lógica
+
+Se muestra el resumen del carrito de compras y se ofrecen tres métodos de pago. Si elige tarjeta (débito o crédito), se solicitan los datos necesarios (titular, número, código).
+Si elige YAPE, se muestra un mensaje simulando un código QR y se espera confirmación del pago. Finalmente, se muestra un mensaje confirmando la compra exitosa.
+
+
+Algoritmo
+
+1. Mostrar los productos y total a pagar.
+
+2. Pedir al usuario que seleccione un método de pago.
+
+    2.1 Si eligió tarjeta:
+
+        2.1.1Pedir nombre del titular, número de tarjeta y código de seguridad.
+
+    2.2 Si eligió YAPE:
+
+        2.2.1 Mostrar un mensaje de código QR.
+
+        2.2.2 Pedir confirmación de pago con “SI”.
+
+3. Mostrar mensaje de éxito de compra.
+
+
+Pseudocódigo
+
+Proceso Compra
+
+    Definir metodoPago Como Entero
+    Definir titular, numeroTarjeta, codigoSeguridad Como Cadena
+    Definir confirmacionYape Como Cadena
+
+    Escribir "----- RESUMEN DEL CARRITO -----"
+    Escribir "1x Polo - S/ 25.00"
+    Escribir "1x Casaca - S/ 90.00"
+    Escribir "Total: S/ 115.00"
+    Escribir ""
+    Escribir "Seleccione el método de pago:"
+    Escribir "1. Tarjeta de débito"
+    Escribir "2. Tarjeta de crédito"
+    Escribir "3. YAPE"
+    Leer metodoPago
+
+    Si metodoPago = 1 Entonces
+        Escribir "Ingrese el nombre del titular de la tarjeta:"
+        Leer titular
+        Escribir "Ingrese el número de tarjeta (16 dígitos):"
+        Leer numeroTarjeta
+        Escribir "Ingrese el código de seguridad (3 dígitos):"
+        Leer codigoSeguridad
+    FinSi
+
+    Si metodoPago = 2 Entonces
+        Escribir "Ingrese el nombre del titular de la tarjeta:"
+        Leer titular
+        Escribir "Ingrese el número de tarjeta (16 dígitos):"
+        Leer numeroTarjeta
+        Escribir "Ingrese el código de seguridad (3 dígitos):"
+        Leer codigoSeguridad
+    FinSi
+
+    Si metodoPago = 3 Entonces
+        Escribir "Mostrando código QR de YAPE..."
+        Escribir "[QR SIMULADO - ESCANEE PARA PAGAR]"
+        Escribir "Escriba 'SI' si ya realizó el pago para continuar:"
+        Leer confirmacionYape
+        Mientras Mayusculas(confirmacionYape) <> "SI" Hacer
+            Escribir "Pago no confirmado. Inténtelo nuevamente:"
+            Leer confirmacionYape
+        FinMientras
+    FinSi
+
+    Si metodoPago <> 1 Y metodoPago <> 2 Y metodoPago <> 3 Entonces
+        Escribir "Opción inválida. Se cancelará la compra."
+        FinProceso
+    FinSi
+
+    Escribir ""
+    Escribir "¡Compra realizada con éxito! Gracias por su preferencia."
+
+FinProceso

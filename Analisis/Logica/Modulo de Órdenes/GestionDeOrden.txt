@@ -1,0 +1,92 @@
+Lógica
+
+Al gestionar un pedido ya realizado, el sistema muestra tres opciones al usuario: modificar el pedido, cancelarlo o cambiar la dirección de envío. Si se desea modificar el pedido, 
+se despliega un catálogo (con cinco prendas como ejemplo) y sus precios, permitiendo seleccionar cantidades deseadas para calcular un cargo extra, luego se indica que el pedido
+ha sido actualizado y se envió la solicitud. Si se elige cancelar, se pregunta si desea dar una razón (opcional), y se confirma que la solicitud de cancelación fue enviada. 
+En caso de cambio de dirección, se solicita la nueva dirección y se informa que la solicitud fue enviada, incluyendo una advertencia de posibles cargos adicionales o reducción 
+del costo de envío según la ubicación.
+
+
+1. Mostrar menú de opciones de gestión del pedido.
+
+2. Si elige modificar el pedido:
+    2.1 Mostrar catálogo con productos y precios.
+    2.2 Permitir ingresar cantidades por producto.
+    2.3 Calcular cargo adicional.
+    2.4 Mostrar resumen y confirmar que el pedido ha sido modificado.
+
+3. Si elige cancelar el pedido:
+    3.1 Preguntar si desea dar una razón.
+    3.2 Mostrar confirmación de que la solicitud fue enviada.
+
+4. Si elige cambiar dirección:
+    4.1 Solicitar nueva dirección.
+    4.2 Mostrar confirmación e indicar posibles variaciones en el costo de envío.
+
+
+Pseudocódigo
+
+
+Proceso GestionarPedido
+	
+    Definir opcion, cantidad1, cantidad2, cantidad3, cantidad4, cantidad5 Como Entero
+    Definir cargoExtra Como Real
+    Definir razonCancelacion, nuevaDireccion Como Cadena
+    Definir nombre1, nombre2, nombre3, nombre4, nombre5 Como Cadena
+    Definir precio1, precio2, precio3, precio4, precio5 Como Real
+	
+    nombre1 <- "Polo"
+    precio1 <- 25.0
+    nombre2 <- "Pantalon"
+    precio2 <- 60.0
+    nombre3 <- "Casaca"
+    precio3 <- 90.0
+    nombre4 <- "Gorra"
+    precio4 <- 15.0
+    nombre5 <- "Zapatos"
+    precio5 <- 120.0
+	
+    Escribir "----- GESTIÓN DE PEDIDO -----"
+    Escribir "1. Modificar pedido"
+    Escribir "2. Cancelar pedido"
+    Escribir "3. Cambiar dirección de envío"
+    Escribir "Seleccione una opción:"
+    Leer opcion
+	
+    Si opcion = 1 Entonces
+        Escribir "----- CATÁLOGO DE PRODUCTOS -----"
+        Escribir "1. ", nombre1, " - S/ ", precio1
+        Escribir "2. ", nombre2, " - S/ ", precio2
+        Escribir "3. ", nombre3, " - S/ ", precio3
+        Escribir "4. ", nombre4, " - S/ ", precio4
+        Escribir "5. ", nombre5, " - S/ ", precio5
+		
+        Escribir "Ingrese cuántos desea agregar de cada producto:"
+        Escribir nombre1, ": "; Leer cantidad1
+        Escribir nombre2, ": "; Leer cantidad2
+        Escribir nombre3, ": "; Leer cantidad3
+        Escribir nombre4, ": "; Leer cantidad4
+        Escribir nombre5, ": "; Leer cantidad5
+		
+        cargoExtra <- (cantidad1 * precio1) + (cantidad2 * precio2) + (cantidad3 * precio3) + (cantidad4 * precio4) + (cantidad5 * precio5)
+		
+        Escribir "Su pedido ha sido modificado correctamente."
+        Escribir "Cargo adicional por modificación: S/ ", cargoExtra
+        Escribir "Su solicitud ha sido enviada."
+		
+    FinSi
+	
+    Si opcion = 2 Entonces
+        Escribir "¿Desea indicar una razón para cancelar el pedido? (Puede dejar vacío):"
+        Leer razonCancelacion
+        Escribir "Solicitud de cancelación enviada."
+    FinSi
+	
+    Si opcion = 3 Entonces
+        Escribir "Ingrese la nueva dirección de envío:"
+        Leer nuevaDireccion
+        Escribir "La solicitud ha sido enviada."
+        Escribir "Se le notificará si hay cambios en el costo de envío."
+    FinSi
+
+FinProceso
