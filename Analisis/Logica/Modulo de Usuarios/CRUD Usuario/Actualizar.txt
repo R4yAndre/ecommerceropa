@@ -1,0 +1,35 @@
+Lógica:
+
+El usuario proporciona su correo electrónico y puede actualizar su nombre o contraseña.
+
+
+Algoritmo:
+
+1. Leer correo electrónico.
+
+2. Verificar si existe.
+
+3. Solicitar nuevos datos y mostrar mensaje de confirmación.
+
+
+Pseudocódigo:
+
+Proceso ActualizarUsuario
+    Definir correoIngresado, nuevoNombre, nuevaContraseña Como Cadena
+
+    Escribir "Ingrese su correo electrónico para actualizar sus datos:"
+    Leer correoIngresado
+
+    Si correoIngresado = "usuario@ejemplo.com" Entonces
+        Escribir "Ingrese nuevo nombre:"
+        Leer nuevoNombre
+        Escribir "Ingrese nueva contraseña:"
+        Leer nuevaContraseña
+
+        Escribir "Datos actualizados exitosamente."
+        Escribir "Nuevo nombre: ", nuevoNombre
+        Escribir "Correo: ", correoIngresado
+    Sino
+        Escribir "Usuario no encontrado."
+    FinSi
+FinProceso

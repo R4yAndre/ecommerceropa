@@ -1,0 +1,49 @@
+Lógica:
+
+El usuario ingresa el código de la orden. Se verifica si es válida y pendiente de pago. Luego se solicita el método de pago (débito, crédito o YAPE) y se registra el pago, cambiando su estado a "Pagado".
+
+
+Algoritmo:
+
+1. Pedir código de orden.
+
+2. Verificar si existe y no ha sido pagada.
+
+3. Solicitar método de pago.
+
+4. Confirmar registro y mostrar mensaje.
+
+
+Pseudocódigo:
+
+Proceso RegistrarPago
+    Definir codigoOrden, metodoPago Como Cadena
+    Definir pagado001, pagado002 Como Logico
+
+    pagado001 <- Falso
+    pagado002 <- Falso
+
+    Escribir "Ingrese el código de la orden a pagar:"
+    Leer codigoOrden
+
+    Si codigoOrden = "001" Y No pagado001 Entonces
+        Escribir "Métodos de pago: débito, crédito, YAPE"
+        Escribir "Ingrese su método de pago:"
+        Leer metodoPago
+
+        pagado001 <- Verdadero
+        Escribir "Pago registrado con ", metodoPago, ". Estado de la orden 001: Pagado."
+
+    Sino
+        Si codigoOrden = "002" Y No pagado002 Entonces
+            Escribir "Métodos de pago: débito, crédito, YAPE"
+            Escribir "Ingrese su método de pago:"
+            Leer metodoPago
+
+            pagado002 <- Verdadero
+            Escribir "Pago registrado con ", metodoPago, ". Estado de la orden 002: Pagado."
+        Sino
+            Escribir "Orden inválida o ya ha sido pagada."
+        FinSi
+    FinSi
+FinProceso

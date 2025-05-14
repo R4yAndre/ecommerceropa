@@ -1,0 +1,29 @@
+Lógica:
+
+Se busca un usuario por correo electrónico y se muestran sus datos personales si coincide.
+
+
+Algoritmo:
+
+1. Leer el correo electrónico.
+
+2. Verificar si corresponde a un usuario registrado.
+
+3. Mostrar sus datos si existe.
+
+
+Pseudocódigo:
+
+Proceso LeerPerfilUsuario
+    Definir correoIngresado Como Cadena
+
+    Escribir "Ingrese su correo electrónico:"
+    Leer correoIngresado
+
+    Si correoIngresado = "usuario@ejemplo.com" Entonces
+        Escribir "Nombre: Juan Pérez"
+        Escribir "Correo: usuario@ejemplo.com"
+    Sino
+        Escribir "Usuario no encontrado."
+    FinSi
+FinProceso

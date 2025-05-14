@@ -1,0 +1,33 @@
+Lógica:
+
+Se simula un historial con entradas y salidas de productos. Se muestran operaciones recientes con fecha, tipo de movimiento y cantidad, organizadas por producto.
+
+
+Algoritmo:
+
+1. Crear registros simulados por producto.
+
+2. Mostrar en forma clara el historial.
+
+
+Pseudocódigo:
+
+Proceso VerHistorialMovimientos
+    Escribir "===== Historial de movimientos ====="
+    Escribir ""
+    Escribir "Producto: Polo"
+    Escribir "- 01/05/2025: Ingreso de 10 unidades"
+    Escribir "- 03/05/2025: Salida de 7 unidades"
+    Escribir "- 05/05/2025: Salida de 5 unidades"
+    Escribir ""
+    Escribir "Producto: Pantalon"
+    Escribir "- 01/05/2025: Ingreso de 20 unidades"
+    Escribir "- 04/05/2025: Salida de 12 unidades"
+    Escribir ""
+    Escribir "Producto: Gorra"
+    Escribir "- 02/05/2025: Ingreso de 15 unidades"
+    Escribir "- 05/05/2025: Salida de 14 unidades"
+    Escribir "- 06/05/2025: Salida de 1 unidad"
+    Escribir ""
+    Escribir "===================================="
+FinProceso

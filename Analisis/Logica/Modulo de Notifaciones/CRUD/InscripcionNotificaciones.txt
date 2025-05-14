@@ -1,0 +1,31 @@
+Lógica
+
+Se solicita al usuario ingresar su correo electrónico si desea recibir notificaciones de nuevos ingresos. Si escribe "NO", se cierra el mensaje.
+
+
+Algoritmo
+
+1. Pedir correo o respuesta "NO".
+
+2. Si escribe un correo, confirmar inscripción.
+
+3. Si escribe "NO", cerrar mensaje.
+
+
+Pseudocódigo:
+
+Proceso InscripcionNotificacionesNuevosIngresos
+
+    Definir respuesta Como Cadena
+
+    Escribir "¿Desea recibir notificaciones de nuevos ingresos?"
+    Escribir "Ingrese su correo o escriba NO para rechazar:"
+    Leer respuesta
+
+    Si respuesta <> "NO" Entonces
+        Escribir "Correo registrado correctamente. Recibirá notificaciones en: ", respuesta
+    Sino
+        Escribir "Ha rechazado recibir notificaciones. Cerrando mensaje..."
+    FinSi
+
+FinProceso

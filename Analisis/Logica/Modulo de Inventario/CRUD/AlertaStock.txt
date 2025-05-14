@@ -1,0 +1,56 @@
+Lógica:
+
+Se verifica si algún producto tiene menos de 5 unidades. Si es así, se muestra una alerta. El usuario puede optar por reponer stock (simulado) o dejarlo pendiente.
+
+
+Algoritmo:
+
+1. Verificar si algún stock es menor a 5.
+
+2. Mostrar alerta si aplica.
+
+3. Ofrecer opción de reponer stock.
+
+4. Si se elige reponer, sumar unidades.
+
+
+Pseudocódigo:
+
+Proceso AlertaBajoStock
+    Definir stock1, stock2, stock3 Como Entero
+    Definir nombre1, nombre2, nombre3 Como Cadena
+    Definir opcion Como Entero
+
+    nombre1 <- "Polo"
+    nombre2 <- "Pantalon"
+    nombre3 <- "Gorra"
+
+    stock1 <- 3
+    stock2 <- 8
+    stock3 <- 2
+
+    Si stock1 < 5 Entonces
+        Escribir "⚠ Alerta: Bajo stock de ", nombre1, " (", stock1, " unidades)"
+    FinSi
+    Si stock2 < 5 Entonces
+        Escribir "⚠ Alerta: Bajo stock de ", nombre2, " (", stock2, " unidades)"
+    FinSi
+    Si stock3 < 5 Entonces
+        Escribir "⚠ Alerta: Bajo stock de ", nombre3, " (", stock3, " unidades)"
+    FinSi
+
+    Escribir "¿Desea reponer stock ahora?"
+    Escribir "1. Sí"
+    Escribir "2. No"
+    Leer opcion
+
+    Si opcion = 1 Entonces
+        stock1 <- stock1 + 10
+        stock3 <- stock3 + 10
+        Escribir "Reposición realizada. Nuevo stock:"
+        Escribir nombre1, ": ", stock1
+        Escribir nombre3, ": ", stock3
+    Sino
+        Escribir "Se ha dejado pendiente la reposición."
+    FinSi
+FinProceso

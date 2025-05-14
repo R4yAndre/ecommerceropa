@@ -1,0 +1,38 @@
+Lógica:
+
+Se permite modificar los datos de un producto existente como el precio o el stock.
+
+
+Algoritmo:
+
+1. Pedir nombre del producto.
+
+2. Verificar existencia.
+
+3. Solicitar nuevos valores y actualizar.
+
+
+Pseudocódigo:
+
+Proceso ActualizarProducto
+    Definir nombreProducto Como Cadena
+    Definir nuevoPrecio Como Real
+    Definir nuevoStock Como Entero
+
+    Escribir "Ingrese el nombre del producto a actualizar:"
+    Leer nombreProducto
+
+    Si nombreProducto = "Polo" Entonces
+        Escribir "Ingrese nuevo precio:"
+        Leer nuevoPrecio
+        Escribir "Ingrese nuevo stock:"
+        Leer nuevoStock
+
+        Escribir "Producto actualizado:"
+        Escribir "Nombre: Polo"
+        Escribir "Nuevo precio: S/ ", nuevoPrecio
+        Escribir "Nuevo stock: ", nuevoStock
+    Sino
+        Escribir "Producto no encontrado."
+    FinSi
+FinProceso

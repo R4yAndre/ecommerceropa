@@ -1,0 +1,31 @@
+Lógica
+
+Se pide al usuario un código de cupón y se valida si cumple con el monto mínimo de compra.
+
+
+Algoritmo
+
+Leer código ingresado y total del carrito.
+
+Validar si cumple condiciones.
+
+Mostrar si es válido o no.
+
+
+Pseudocódigo
+
+Proceso ValidarCuponEnCarrito
+
+    Definir codigoIngresado Como Cadena
+    Definir totalCarrito Como Real
+
+    codigoIngresado <- "NUEVO20"
+    totalCarrito <- 120
+
+    Si codigoIngresado = "NUEVO20" Y totalCarrito >= 100 Entonces
+        Escribir "Cupón válido. Puedes usarlo."
+    Sino
+        Escribir "Cupón inválido o no cumple el monto mínimo."
+    FinSi
+
+FinProceso

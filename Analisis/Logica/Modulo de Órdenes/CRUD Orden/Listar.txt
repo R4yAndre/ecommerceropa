@@ -1,0 +1,20 @@
+Lógica:
+
+Se simulan dos órdenes pendientes con código, total y estado. Se muestran al usuario con sus respectivos datos.
+
+
+Algoritmo:
+
+1. Crear dos órdenes con datos simulados.
+
+2. Mostrar en lista con estado "Pendiente".
+
+
+Pseudocódigo:
+
+Proceso ListarOrdenesPendientes
+    Escribir "===== Órdenes Pendientes ====="
+    Escribir "Orden 001 | Total: S/ 65.00 | Estado: Pendiente"
+    Escribir "Orden 002 | Total: S/ 120.00 | Estado: Pendiente"
+    Escribir "================================"
+FinProceso

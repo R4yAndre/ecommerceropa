@@ -1,0 +1,28 @@
+Lógica
+
+Se registra un cupón con un código, porcentaje de descuento y un monto mínimo de compra requerido para que sea válido.
+
+
+Algoritmo:
+
+1. Definir código, descuento y mínimo.
+
+2. Mostrar confirmación de creación.
+
+
+Pseudocódigo:
+
+Proceso CrearCupon
+
+    Definir codigoCupon Como Cadena
+    Definir descuentoPorcentaje, montoMinimo Como Real
+
+    codigoCupon <- "NUEVO20"
+    descuentoPorcentaje <- 20
+    montoMinimo <- 100
+
+    Escribir "Cupón creado: ", codigoCupon
+    Escribir "Descuento: ", descuentoPorcentaje, "%"
+    Escribir "Compra mínima: S/ ", montoMinimo
+
+FinProceso

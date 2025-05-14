@@ -1,0 +1,38 @@
+Lógica:
+
+Se simulan los datos de nuevos usuarios registrados usando variables individuales con nombres distintos para cada usuario, indicando su nombre y fecha de registro. Finalmente, se 
+muestran todos los usuarios por pantalla para dar una vista clara de los registros recientes.
+
+
+Algoritmo:
+
+Definir variables individuales para cada usuario y su fecha de registro.
+
+Asignar valores simulados a cada variable.
+
+Mostrar en pantalla los nuevos usuarios registrados.
+
+
+Pseudocódigo
+
+Proceso NuevosUsuariosRegistrados
+
+    Definir usuarioA, fechaA Como Cadena
+    Definir usuarioB, fechaB Como Cadena
+    Definir usuarioC, fechaC Como Cadena
+
+    usuarioA <- "Carlos Mendoza"
+    fechaA <- "10/05/2025"
+
+    usuarioB <- "Lucía Torres"
+    fechaB <- "11/05/2025"
+
+    usuarioC <- "Andrés Rojas"
+    fechaC <- "12/05/2025"
+
+    Escribir "NUEVOS USUARIOS REGISTRADOS:"
+    Escribir usuarioA, " - Registrado el ", fechaA
+    Escribir usuarioB, " - Registrado el ", fechaB
+    Escribir usuarioC, " - Registrado el ", fechaC
+
+FinProceso

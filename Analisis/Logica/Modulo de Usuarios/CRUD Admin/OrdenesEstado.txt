@@ -1,0 +1,28 @@
+Lógica:
+
+Se cuentan las órdenes según su estado actual: Pendiente, Enviado, Entregado, Cancelado.
+
+
+Algoritmo:
+
+1. Registrar las cantidades de cada estado.
+
+2. Mostrar los datos.
+
+
+Pseudocódigo:
+
+Proceso OrdenesPorEstado
+    Definir pendientes, enviados, entregados, cancelados Como Entero
+
+    pendientes <- 12
+    enviados <- 20
+    entregados <- 55
+    cancelados <- 3
+
+    Escribir "Órdenes por estado:"
+    Escribir "Pendientes: ", pendientes
+    Escribir "Enviados: ", enviados
+    Escribir "Entregados: ", entregados
+    Escribir "Cancelados: ", cancelados
+FinProceso

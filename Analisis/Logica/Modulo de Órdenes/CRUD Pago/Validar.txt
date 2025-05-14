@@ -1,0 +1,45 @@
+Lógica:
+
+Se ingresa el código de una orden, se verifica si ha sido pagada o no, y se muestra su estado.
+
+
+Algoritmo:
+
+1. Pedir código de orden.
+
+2. Verificar si existe.
+
+3. Mostrar si está pagada o pendiente.
+
+
+Pseudocódigo:
+
+Proceso ValidarEstadoPago
+    Definir codigoOrden Como Cadena
+    Definir pagado001, pagado002 Como Logico
+
+    // Estado simulado
+    pagado001 <- Verdadero
+    pagado002 <- Falso
+
+    Escribir "Ingrese el código de la orden para verificar el pago:"
+    Leer codigoOrden
+
+    Si codigoOrden = "001" Entonces
+        Si pagado001 Entonces
+            Escribir "Orden 001: Pagado."
+        Sino
+            Escribir "Orden 001: Pendiente de pago."
+        FinSi
+    Sino
+        Si codigoOrden = "002" Entonces
+            Si pagado002 Entonces
+                Escribir "Orden 002: Pagado."
+            Sino
+                Escribir "Orden 002: Pendiente de pago."
+            FinSi
+        Sino
+            Escribir "Orden no encontrada."
+        FinSi
+    FinSi
+FinProceso

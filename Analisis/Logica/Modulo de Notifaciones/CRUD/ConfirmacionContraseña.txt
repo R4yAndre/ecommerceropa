@@ -1,0 +1,25 @@
+Lógica:
+
+Cuando el usuario cambia su contraseña, se muestra una notificación confirmando que el cambio se ha realizado con éxito y que se ha enviado un correo.
+
+
+Algoritmo:
+
+1. Simular nombre y correo del usuario.
+
+2. Mostrar confirmación de cambio de contraseña.
+
+
+Pseudocódigo:
+
+Proceso ConfirmarCambioContrasena
+
+    Definir nombreUsuario, correoUsuario Como Cadena
+
+    nombreUsuario <- "Luis Ramírez"
+    correoUsuario <- "luis@mail.com"
+
+    Escribir "Contraseña cambiada exitosamente para ", nombreUsuario
+    Escribir "Se ha enviado un correo de confirmación a ", correoUsuario
+
+FinProceso

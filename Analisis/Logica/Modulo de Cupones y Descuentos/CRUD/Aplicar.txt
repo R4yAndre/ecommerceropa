@@ -1,0 +1,27 @@
+Lógica
+
+Se aplica el descuento del cupón válido sobre el total del carrito y se muestra el nuevo total con descuento.
+
+
+Algoritmo
+
+1. Definir total, descuento y calcular monto final.
+
+2. Mostrar resultado.
+
+
+Pseudocódigo
+
+Proceso AplicarDescuento
+
+    Definir totalCarrito, descuento, totalConDescuento Como Real
+    totalCarrito <- 150
+    descuento <- 20
+
+    totalConDescuento <- totalCarrito - (totalCarrito * descuento / 100)
+
+    Escribir "Total original: S/ ", totalCarrito
+    Escribir "Descuento aplicado: ", descuento, "%"
+    Escribir "Total con descuento: S/ ", totalConDescuento
+
+FinProceso

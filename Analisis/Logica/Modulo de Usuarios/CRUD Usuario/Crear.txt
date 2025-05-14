@@ -1,0 +1,29 @@
+Lógica:
+
+Se le solicita al usuario que ingrese su nombre, correo y contraseña. Estos datos se registran y se muestra un mensaje de confirmación.
+
+Algoritmo:
+
+1. Solicitar los datos de registro.
+
+2. Guardar la información simulada.
+
+3. Confirmar creación.
+
+
+Pseudocódigo:
+
+Proceso CrearUsuario
+    Definir nombre, correo, contraseña Como Cadena
+
+    Escribir "Ingrese su nombre completo:"
+    Leer nombre
+    Escribir "Ingrese su correo electrónico:"
+    Leer correo
+    Escribir "Ingrese su contraseña:"
+    Leer contraseña
+
+    Escribir "Usuario registrado exitosamente."
+    Escribir "Nombre: ", nombre
+    Escribir "Correo: ", correo
+FinProceso

@@ -1,0 +1,73 @@
+Lógica:
+
+El usuario elige si quiere registrar un ingreso o salida de stock. Luego selecciona el producto y la cantidad, y esta se suma o resta del inventario actual.
+
+
+
+Algoritmo:
+
+1. Mostrar opción: ingreso o salida.
+
+2. Mostrar catálogo de productos.
+
+3. Leer opción y cantidad.
+
+4. Sumar o restar al stock correspondiente.
+
+
+Pseudocódigo:
+
+Proceso RegistrarMovimientoStock
+    Definir nombre1, nombre2, nombre3 Como Cadena
+    Definir stock1, stock2, stock3 Como Entero
+    Definir tipoMovimiento, producto, cantidad Como Entero
+
+    nombre1 <- "Polo"
+    nombre2 <- "Pantalon"
+    nombre3 <- "Gorra"
+
+    stock1 <- 20
+    stock2 <- 15
+    stock3 <- 10
+
+    Escribir "¿Qué desea registrar?"
+    Escribir "1. Ingreso de stock"
+    Escribir "2. Salida de stock"
+    Leer tipoMovimiento
+
+    Escribir "Seleccione producto:"
+    Escribir "1. ", nombre1
+    Escribir "2. ", nombre2
+    Escribir "3. ", nombre3
+    Leer producto
+
+    Escribir "Ingrese la cantidad:"
+    Leer cantidad
+
+    Si tipoMovimiento = 1 Entonces
+        Si producto = 1 Entonces
+            stock1 <- stock1 + cantidad
+        FinSi
+        Si producto = 2 Entonces
+            stock2 <- stock2 + cantidad
+        FinSi
+        Si producto = 3 Entonces
+            stock3 <- stock3 + cantidad
+        FinSi
+    FinSi
+
+    Si tipoMovimiento = 2 Entonces
+        Si producto = 1 Entonces
+            stock1 <- stock1 - cantidad
+        FinSi
+        Si producto = 2 Entonces
+            stock2 <- stock2 - cantidad
+        FinSi
+        Si producto = 3 Entonces
+            stock3 <- stock3 - cantidad
+        FinSi
+    FinSi
+
+    Escribir "Movimiento registrado correctamente."
+    Escribir "Stock actual: ", nombre1, ": ", stock1, " | ", nombre2, ": ", stock2, " | ", nombre3, ": ", stock3
+FinProceso

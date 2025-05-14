@@ -1,0 +1,37 @@
+Lógica:
+
+El usuario ingresa el código de la orden. Si es válido, se pide opcionalmente un motivo. La orden queda cancelada y se confirma el envío de la solicitud.
+
+
+Algoritmo:
+
+1. Pedir código de orden.
+
+2. Validar si existe.
+
+3. Pedir motivo (opcional).
+
+4. Mostrar que la orden fue cancelada.
+
+
+Pseudocódigo:
+
+Proceso CancelarOrden
+    Definir codigoOrden, motivo Como Cadena
+
+    Escribir "Ingrese el código de la orden que desea cancelar:"
+    Leer codigoOrden
+
+    Si codigoOrden = "001" O codigoOrden = "002" Entonces
+        Escribir "¿Desea dar un motivo de cancelación? (puede dejar en blanco)"
+        Leer motivo
+
+        Escribir "Orden ", codigoOrden, " cancelada exitosamente."
+        Si Longitud(motivo) > 0 Entonces
+            Escribir "Motivo proporcionado: ", motivo
+        FinSi
+        Escribir "Se ha enviado su solicitud de cancelación."
+    Sino
+        Escribir "Orden no encontrada."
+    FinSi
+FinProceso

@@ -1,0 +1,48 @@
+Lógica
+
+Se simulan las ventas de cada mes utilizando variables individuales, y se muestran una por una en pantalla como resumen del año.
+
+
+Algoritmo
+
+1. Definir una variable para cada mes.
+
+2. Asignar valores simulados.
+
+3. Mostrar en pantalla mes por mes.
+
+
+Pseudocódigo
+
+Proceso VentasPorMes
+
+    Definir enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre Como Real
+
+    enero <- 1500
+    febrero <- 1800
+    marzo <- 2100
+    abril <- 1950
+    mayo <- 2200
+    junio <- 2500
+    julio <- 3000
+    agosto <- 3100
+    septiembre <- 2800
+    octubre <- 3200
+    noviembre <- 3500
+    diciembre <- 4000
+
+    Escribir "VENTAS POR MES"
+    Escribir "Enero: S/ ", enero
+    Escribir "Febrero: S/ ", febrero
+    Escribir "Marzo: S/ ", marzo
+    Escribir "Abril: S/ ", abril
+    Escribir "Mayo: S/ ", mayo
+    Escribir "Junio: S/ ", junio
+    Escribir "Julio: S/ ", julio
+    Escribir "Agosto: S/ ", agosto
+    Escribir "Septiembre: S/ ", septiembre
+    Escribir "Octubre: S/ ", octubre
+    Escribir "Noviembre: S/ ", noviembre
+    Escribir "Diciembre: S/ ", diciembre
+
+FinProceso

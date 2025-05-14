@@ -1,0 +1,49 @@
+Lógica:
+
+Se permite al usuario listar productos por página, filtrar por categoría o buscar por nombre. Se muestran los productos correspondientes.
+
+
+Algoritmo:
+
+1. Preguntar tipo de listado (página, categoría o búsqueda).
+
+2. Mostrar productos correspondientes.
+
+
+Pseudocódigo:
+
+Proceso ListarProductos
+    Definir opcion, i Como Entero
+    Definir categoriaBuscada, nombreBuscado Como Cadena
+
+    Escribir "¿Cómo desea listar productos?"
+    Escribir "1. Por página"
+    Escribir "2. Por categoría"
+    Escribir "3. Por búsqueda"
+    Leer opcion
+
+    Segun opcion Hacer
+        1:
+            Escribir "Página 1:"
+            Escribir "1. Polo (Ropa) - S/ 25.00"
+            Escribir "2. Pantalón (Ropa) - S/ 60.00"
+            Escribir "3. Zapatillas (Calzado) - S/ 120.00"
+
+        2:
+            Escribir "Ingrese la categoría:"
+            Leer categoriaBuscada
+            Si categoriaBuscada = "Ropa" Entonces
+                Escribir "Polo - S/ 25.00"
+                Escribir "Pantalón - S/ 60.00"
+            FinSi
+
+        3:
+            Escribir "Ingrese el nombre a buscar:"
+            Leer nombreBuscado
+            Si nombreBuscado = "Polo" Entonces
+                Escribir "Polo (Ropa) - S/ 25.00"
+            Sino
+                Escribir "Producto no encontrado."
+            FinSi
+    FinSegun
+FinProceso

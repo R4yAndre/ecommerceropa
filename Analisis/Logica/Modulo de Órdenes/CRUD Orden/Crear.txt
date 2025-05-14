@@ -1,0 +1,45 @@
+Lógica:
+
+Se simula un carrito con productos ya agregados. Se muestran al usuario para confirmar la creación de una orden. Se genera una orden con total y estado "Pendiente".
+
+
+Algoritmo:
+
+1. Simular productos en el carrito.
+
+2. Mostrar lista y total.
+
+3. Confirmar creación de orden.
+
+4. Si acepta, mostrar mensaje de orden creada.
+
+
+Pseudocódigo:
+
+Proceso CrearOrdenDesdeCarrito
+    Definir producto1, producto2 Como Cadena
+    Definir precio1, precio2, total Como Real
+    Definir confirmar Como Cadena
+
+    producto1 <- "Polo x2"
+    precio1 <- 25 * 2
+
+    producto2 <- "Gorra x1"
+    precio2 <- 15 * 1
+
+    total <- precio1 + precio2
+
+    Escribir "Productos en el carrito:"
+    Escribir "- ", producto1, ": S/ ", precio1
+    Escribir "- ", producto2, ": S/ ", precio2
+    Escribir "Total: S/ ", total
+
+    Escribir "¿Desea crear la orden? (SI / NO)"
+    Leer confirmar
+
+    Si Mayusculas(confirmar) = "SI" Entonces
+        Escribir "Orden creada exitosamente. Estado: Pendiente"
+    Sino
+        Escribir "No se creó la orden."
+    FinSi
+FinProceso

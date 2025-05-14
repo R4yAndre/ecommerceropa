@@ -1,0 +1,51 @@
+Lógica
+
+Se listan los productos que tiene el usuario con su cantidad actual, elige cuál desea actualizar y se ingresa la nueva cantidad que reemplaza la anterior.
+
+
+Algoritmo
+
+1. Mostrar los productos con su cantidad actual.
+
+2. Leer el producto a actualizar.
+
+3. Leer la nueva cantidad.
+
+4. Reemplazar la cantidad anterior con la nueva.
+
+
+Pseudocódigo
+
+Proceso ActualizarCantidadProducto
+    Definir nombre1, nombre2, nombre3 Como Cadena
+    Definir cant1, cant2, cant3, nuevaCantidad, opcion Como Entero
+
+    nombre1 <- "Polo"
+    nombre2 <- "Pantalon"
+    nombre3 <- "Gorra"
+
+    cant1 <- 2
+    cant2 <- 1
+    cant3 <- 3
+
+    Escribir "Productos en el carrito:"
+    Escribir "1. ", nombre1, " - Cantidad: ", cant1
+    Escribir "2. ", nombre2, " - Cantidad: ", cant2
+    Escribir "3. ", nombre3, " - Cantidad: ", cant3
+    Escribir "Seleccione el producto a actualizar:"
+    Leer opcion
+    Escribir "Ingrese la nueva cantidad:"
+    Leer nuevaCantidad
+
+    Si opcion = 1 Entonces
+        cant1 <- nuevaCantidad
+    FinSi
+    Si opcion = 2 Entonces
+        cant2 <- nuevaCantidad
+    FinSi
+    Si opcion = 3 Entonces
+        cant3 <- nuevaCantidad
+    FinSi
+
+    Escribir "Cantidad actualizada correctamente."
+FinProceso

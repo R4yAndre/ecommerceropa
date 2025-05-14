@@ -1,0 +1,36 @@
+Lógica:
+
+El administrador ingresa el nombre, categoría, precio y stock del nuevo producto. Este se agrega a la lista disponible del inventario.
+
+
+Algoritmo:
+
+1. Solicitar datos del producto.
+
+2. Guardar el producto simulado.
+
+3. Confirmar creación.
+
+
+Pseudocódigo:
+
+Proceso CrearProducto
+    Definir nombre, categoria Como Cadena
+    Definir precio Como Real
+    Definir stock Como Entero
+
+    Escribir "Ingrese el nombre del nuevo producto:"
+    Leer nombre
+    Escribir "Ingrese la categoría del producto:"
+    Leer categoria
+    Escribir "Ingrese el precio:"
+    Leer precio
+    Escribir "Ingrese el stock inicial:"
+    Leer stock
+
+    Escribir "Producto creado exitosamente:"
+    Escribir "Nombre: ", nombre
+    Escribir "Categoría: ", categoria
+    Escribir "Precio: S/ ", precio
+    Escribir "Stock: ", stock
+FinProceso

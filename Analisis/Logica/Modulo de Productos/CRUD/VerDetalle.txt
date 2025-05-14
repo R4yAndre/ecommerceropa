@@ -1,0 +1,28 @@
+Lógica:
+
+El usuario escribe el nombre del producto, y se muestran sus detalles si existe.
+
+
+Algoritmo:
+
+1. Leer nombre del producto.
+
+2. Mostrar detalles si coincide.
+
+
+Pseudocódigo:
+
+Proceso VerDetalleProducto
+    Definir producto Como Cadena
+    Escribir "Ingrese el nombre del producto a consultar:"
+    Leer producto
+
+    Si producto = "Polo" Entonces
+        Escribir "Nombre: Polo"
+        Escribir "Categoría: Ropa"
+        Escribir "Precio: S/ 25.00"
+        Escribir "Stock disponible: 20 unidades"
+    Sino
+        Escribir "Producto no encontrado."
+    FinSi
+FinProceso

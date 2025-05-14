@@ -1,0 +1,26 @@
+Lógica
+
+Cuando el estado de una orden cambia (por ejemplo, de "Pendiente" a "Enviado"), se notifica al usuario con un mensaje.
+
+
+Algoritmo
+
+1. Definir estado anterior y actual.
+
+2. Si hay cambio, mostrar mensaje de notificación.
+
+
+Pseudocódigo:
+
+Proceso NotificarCambioEstadoOrden
+
+    Definir estadoAnterior, estadoActual Como Cadena
+
+    estadoAnterior <- "Pendiente"
+    estadoActual <- "Enviado"
+
+    Si estadoAnterior <> estadoActual Entonces
+        Escribir "Su orden ha cambiado de estado: ", estadoAnterior, " → ", estadoActual
+    FinSi
+
+FinProceso

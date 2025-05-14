@@ -1,0 +1,20 @@
+Lógica:
+ 
+Se muestra un historial simulado de pagos con código de orden, monto, método de pago y fecha.
+
+
+Algoritmo:
+
+1. Simular pagos realizados.
+
+2. Mostrar lista con detalles.
+
+ 
+Pseudocódigo:
+
+Proceso VerHistorialPagos
+    Escribir "======= HISTORIAL DE PAGOS ======="
+    Escribir "Orden: 001 | Monto: S/ 65.00 | Método: débito | Fecha: 14/05/2025"
+    Escribir "Orden: 003 | Monto: S/ 90.00 | Método: YAPE   | Fecha: 13/05/2025"
+    Escribir "=================================="
+FinProceso

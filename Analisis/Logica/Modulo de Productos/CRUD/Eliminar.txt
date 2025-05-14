@@ -1,0 +1,35 @@
+Lógica:
+
+El administrador puede desactivar un producto. Esto lo oculta de la vista pública sin eliminarlo realmente.
+
+
+Algoritmo:
+
+1. Pedir nombre del producto.
+
+2. Confirmar acción.
+
+3. Marcar como inactivo.
+
+
+Pseudocódigo:
+
+Proceso EliminarProducto
+    Definir nombreProducto, confirmar Como Cadena
+
+    Escribir "Ingrese el nombre del producto a eliminar:"
+    Leer nombreProducto
+
+    Si nombreProducto = "Polo" Entonces
+        Escribir "¿Desea marcar este producto como inactivo? (SI/NO)"
+        Leer confirmar
+
+        Si confirmar = "SI" Entonces
+            Escribir "Producto Polo ha sido marcado como inactivo."
+        Sino
+            Escribir "Operación cancelada."
+        FinSi
+    Sino
+        Escribir "Producto no encontrado."
+    FinSi
+FinProceso

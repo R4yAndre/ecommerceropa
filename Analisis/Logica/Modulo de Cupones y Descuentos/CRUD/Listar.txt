@@ -1,0 +1,23 @@
+Lógica
+
+Se muestran todos los cupones disponibles con sus respectivos descuentos y condiciones de uso.
+
+
+Algoritmo
+
+1. Definir lista de cupones con sus datos.
+
+2. Imprimir cada cupón.
+
+
+Pseudocódigo
+
+Proceso ListarCuponesDisponibles
+
+    Escribir "Cupones disponibles:"
+
+    Escribir "1. NUEVO20 - 20% de descuento - Mínimo S/100"
+    Escribir "2. INVIERNO15 - 15% de descuento - Mínimo S/80"
+    Escribir "3. ENVIOGRATIS - Envío gratis - Mínimo S/50"
+
+FinProceso  

@@ -1,0 +1,37 @@
+Lógica:
+
+El sistema permite desactivar un usuario a solicitud del mismo. Se pide confirmación y se muestra mensaje de estado.
+
+
+Algoritmo:
+
+1. Leer correo electrónico.
+
+2. Verificar si existe.
+
+3. Solicitar confirmación.
+
+4. Eliminar o cancelar acción.
+
+
+Pseudocódigo:
+
+Proceso EliminarUsuario
+    Definir correoIngresado, confirmacion Como Cadena
+
+    Escribir "Ingrese su correo electrónico para desactivar su cuenta:"
+    Leer correoIngresado
+
+    Si correoIngresado = "usuario@ejemplo.com" Entonces
+        Escribir "¿Está seguro que desea desactivar su cuenta? (SI/NO)"
+        Leer confirmacion
+
+        Si confirmacion = "SI" Entonces
+            Escribir "Su cuenta ha sido desactivada exitosamente."
+        Sino
+            Escribir "Operación cancelada."
+        FinSi
+    Sino
+        Escribir "Usuario no encontrado."
+    FinSi
+FinProceso

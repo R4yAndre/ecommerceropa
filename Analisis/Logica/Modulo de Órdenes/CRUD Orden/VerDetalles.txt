@@ -1,0 +1,40 @@
+Lógica:
+
+Al ingresar un código de orden válido, se muestran los productos, cantidades, precios, total y estado de la orden.
+
+
+Algoritmo:
+
+1. Pedir el código de la orden.
+
+2. Validar si existe.
+
+3. Mostrar detalles si es válido.
+
+
+Pseudocódigo:
+
+Proceso VerDetalleOrden
+    Definir codigoOrden Como Cadena
+
+    Escribir "Ingrese el código de la orden (Ej: 001):"
+    Leer codigoOrden
+
+    Si codigoOrden = "001" Entonces
+        Escribir "Detalle de Orden 001:"
+        Escribir "- Polo x2: S/ 50.00"
+        Escribir "- Gorra x1: S/ 15.00"
+        Escribir "Total: S/ 65.00"
+        Escribir "Estado: Pendiente"
+    Sino
+        Si codigoOrden = "002" Entonces
+            Escribir "Detalle de Orden 002:"
+            Escribir "- Casaca x1: S/ 90.00"
+            Escribir "- Pantalón x1: S/ 30.00"
+            Escribir "Total: S/ 120.00"
+            Escribir "Estado: Pendiente"
+        Sino
+            Escribir "Orden no encontrada."
+        FinSi
+    FinSi
+FinProceso

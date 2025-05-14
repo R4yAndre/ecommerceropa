@@ -1,0 +1,28 @@
+Lógica
+
+Cuando el usuario se registra o realiza una compra, se simula el envío de un correo electrónico de confirmación. Se muestra un mensaje indicando que el email fue enviado exitosamente.
+
+
+Algoritmo
+
+Definir nombre y correo del usuario.
+
+Simular evento (registro o compra).
+
+Mostrar mensaje de envío de email.
+
+
+Pseudocódigo
+
+Proceso EnviarEmailConfirmacion
+	
+    Definir nombreUsuario, correoUsuario Como Cadena
+	
+    nombreUsuario <- "Laura Fernández"
+    correoUsuario <- "laura@mail.com"
+	
+    Escribir "Compra de ", nombreUsuario
+    Escribir "Enviando correo de confirmación a ", correoUsuario, "..."
+    Escribir "Correo enviado con éxito."
+	
+FinProceso

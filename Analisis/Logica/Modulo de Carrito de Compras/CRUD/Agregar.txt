@@ -1,0 +1,59 @@
+Lógica
+
+Se muestra un catálogo de ropa con tres productos disponibles (nombre y precio), el usuario selecciona uno e indica cuántas unidades quiere agregar al carrito, las cuales se suman 
+a su cantidad actual.
+
+
+Algoritmo
+
+1. Mostrar el catálogo con nombre y precio.
+
+2. Leer la opción del usuario (producto).
+
+3. Leer la cantidad deseada.
+
+4. Agregar esa cantidad al acumulado del producto.
+
+
+Pseudocódigo
+
+Proceso AgregarProducto
+    Definir nombre1, nombre2, nombre3 Como Cadena
+    Definir precio1, precio2, precio3 Como Real
+    Definir cant1, cant2, cant3 Como Entero
+    Definir opcion, cantidad Como Entero
+
+    // Inicializar catálogo
+    nombre1 <- "Polo"
+    precio1 <- 30
+    nombre2 <- "Pantalon"
+    precio2 <- 60
+    nombre3 <- "Gorra"
+    precio3 <- 15
+
+    // Inicializar cantidades
+    cant1 <- 0
+    cant2 <- 0
+    cant3 <- 0
+
+    Escribir "Catálogo de productos:"
+    Escribir "1. ", nombre1, " - S/ ", precio1
+    Escribir "2. ", nombre2, " - S/ ", precio2
+    Escribir "3. ", nombre3, " - S/ ", precio3
+    Escribir "Seleccione un producto para agregar:"
+    Leer opcion
+    Escribir "¿Cuántas unidades desea agregar?"
+    Leer cantidad
+
+    Si opcion = 1 Entonces
+        cant1 <- cant1 + cantidad
+    FinSi
+    Si opcion = 2 Entonces
+        cant2 <- cant2 + cantidad
+    FinSi
+    Si opcion = 3 Entonces
+        cant3 <- cant3 + cantidad
+    FinSi
+
+    Escribir "Producto agregado correctamente al carrito."
+FinProceso

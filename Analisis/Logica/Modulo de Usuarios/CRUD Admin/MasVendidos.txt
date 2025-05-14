@@ -1,0 +1,37 @@
+Lógica
+
+Se simulan los datos de los productos más vendidos usando variables individuales para cada producto y su respectiva cantidad de ventas. Luego, se muestran ordenadamente por pantalla, 
+destacando sus nombres y cantidades vendidas.
+
+
+Algoritmo
+
+1. Definir variables individuales para cada producto y su cantidad vendida.
+
+2. Asignar valores simulados.
+
+3. Mostrar en pantalla los productos y su número de ventas.
+
+
+Pseudocódigo 
+
+Proceso ProductosMasVendidos
+
+    Definir producto1, producto2, producto3 Como Cadena
+    Definir ventas1, ventas2, ventas3 Como Entero
+
+    producto1 <- "Polo Básico"
+    ventas1 <- 150
+
+    producto2 <- "Jean Slim"
+    ventas2 <- 120
+
+    producto3 <- "Casaca de Invierno"
+    ventas3 <- 90
+
+    Escribir "PRODUCTOS MÁS VENDIDOS:"
+    Escribir producto1, " - ", ventas1, " unidades vendidas"
+    Escribir producto2, " - ", ventas2, " unidades vendidas"
+    Escribir producto3, " - ", ventas3, " unidades vendidas"
+
+FinProceso

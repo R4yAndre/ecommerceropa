@@ -1,0 +1,47 @@
+Lógica
+Se toma la cantidad y precio de cada producto del carrito, se calcula el subtotal, se aplica un descuento del 10%, y se muestra el total a pagar.
+
+
+Algoritmo
+
+1. Calcular subtotal sumando (precio × cantidad) de cada producto.
+
+2. Calcular el descuento (10% del subtotal).
+
+3. Restar el descuento al subtotal para obtener el total.
+
+4. Mostrar todos los cálculos.
+
+
+Pseudocódigo:
+
+Proceso CalcularTotalConDescuento
+    Definir nombre1, nombre2, nombre3 Como Cadena
+    Definir precio1, precio2, precio3 Como Real
+    Definir cant1, cant2, cant3 Como Entero
+    Definir subtotal, descuento, total Como Real
+
+    nombre1 <- "Polo"
+    precio1 <- 30
+    cant1 <- 2
+
+    nombre2 <- "Pantalon"
+    precio2 <- 60
+    cant2 <- 1
+
+    nombre3 <- "Gorra"
+    precio3 <- 15
+    cant3 <- 3
+
+    subtotal <- (cant1 * precio1) + (cant2 * precio2) + (cant3 * precio3)
+    descuento <- subtotal * 0.10
+    total <- subtotal - descuento
+
+    Escribir "Resumen de compra:"
+    Escribir nombre1, " x", cant1, ": S/ ", cant1 * precio1
+    Escribir nombre2, " x", cant2, ": S/ ", cant2 * precio2
+    Escribir nombre3, " x", cant3, ": S/ ", cant3 * precio3
+    Escribir "Subtotal: S/ ", subtotal
+    Escribir "Descuento (10%): -S/ ", descuento
+    Escribir "Total a pagar: S/ ", total
+FinProceso

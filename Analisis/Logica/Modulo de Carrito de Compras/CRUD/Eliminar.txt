@@ -1,0 +1,47 @@
+Lógica
+
+El usuario selecciona un producto del carrito y su cantidad es restablecida a 0, eliminándolo efectivamente del carrito.
+
+
+Algoritmo
+
+1. Mostrar los productos agregados.
+
+2. Leer el número del producto a eliminar.
+
+3. Establecer la cantidad a 0.
+
+
+Pseudocódigo
+
+Proceso EliminarProducto
+    Definir nombre1, nombre2, nombre3 Como Cadena
+    Definir cant1, cant2, cant3, opcion Como Entero
+
+    nombre1 <- "Polo"
+    nombre2 <- "Pantalon"
+    nombre3 <- "Gorra"
+
+    cant1 <- 2
+    cant2 <- 1
+    cant3 <- 3
+
+    Escribir "Productos en el carrito:"
+    Escribir "1. ", nombre1
+    Escribir "2. ", nombre2
+    Escribir "3. ", nombre3
+    Escribir "Seleccione el producto a eliminar:"
+    Leer opcion
+
+    Si opcion = 1 Entonces
+        cant1 <- 0
+    FinSi
+    Si opcion = 2 Entonces
+        cant2 <- 0
+    FinSi
+    Si opcion = 3 Entonces
+        cant3 <- 0
+    FinSi
+
+    Escribir "Producto eliminado correctamente del carrito."
+FinProceso
