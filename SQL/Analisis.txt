@@ -1,0 +1,102 @@
+BASE DE DATOS RELACIONAL – PostgreSQL
+
+Estructura y Relaciones:
+
+usuario
+
+    Entidad central. Almacena información básica de los clientes registrados.
+    
+    Relaciones:
+
+    - Uno a muchos con direccion_envio (un usuario puede tener varias direcciones).
+
+    - Referenciado indirectamente desde otras entidades no relacionales (como orden y carrito en MongoDB).
+
+direccion_envio
+
+    Contiene direcciones físicas asociadas a los usuarios.
+
+    Relación: 
+    
+    - FK hacia usuario.
+
+categoria
+
+    Clasifica los productos en grandes grupos (ej. hombre, mujer, accesorios).
+
+    Relación: 
+    
+    - FK desde stock_producto.
+
+color y talla
+
+    Listas controladas de atributos estándar.
+
+    Referenciadas por stock_producto.
+
+cupon
+
+    Define cupones disponibles en el sistema con restricciones de uso.
+
+    Su uso por usuario se registra de forma embebida en MongoDB.
+
+stock_producto
+
+    Registra el inventario de cada producto como combinación única de nombre, categoría, color y talla.
+
+    FK hacia categoria, color, talla.
+
+    Se asocia indirectamente a los productos de MongoDB a través del campo nombre_producto.
+
+
+
+
+BASE DE DATOS NO RELACIONAL – MongoDB
+
+Estructura y Elementos:
+
+usuario (documento raíz)
+    
+    Contiene:
+
+    - direcciones_envio: Lista embebida de direcciones.
+
+    - carrito: Objeto con items[] (productos seleccionados).
+
+    - notificaciones[]: Historial de alertas personales.
+
+    - cupones_usados[]: Registro de uso de cupones por el usuario.
+
+    Este diseño favorece lecturas rápidas y evita múltiples consultas externas.
+
+producto
+
+    Documento con información completa del producto.
+
+    - Incluye imagenes[] y variantes[], donde cada variante tiene talla, color, y stock.
+
+    - No depende de referencias externas para construir su vista, lo que mejora el rendimiento en interfaces.
+
+orden
+
+    Documento que representa una transacción finalizada.
+
+    - Contiene: items[] (productos comprados), direccion_envio y pago.
+
+    - Este modelo permite mantener un snapshot completo de la orden tal como fue en el momento de la compra, sin depender del estado actual de otras entidades.
+
+pago
+
+    Embebido en orden. Incluye método de pago, estado y fecha.
+
+    - Se evita una colección separada ya que no se reutiliza en otro contexto.
+
+
+
+Relación entre ambas bases de datos
+
+- La base relacional almacena las listas de valores controlados (talla, color, categoria) y la estructura formal (usuario, stock_producto, cupon).
+
+- MongoDB gestiona la experiencia del usuario y los datos que cambian con mayor frecuencia o requieren acceso más rápido (como el carrito y productos).
+
+- Para garantizar la coherencia entre sistemas, campos como nombre_producto, talla, y color deben alinearse entre ambas bases (con validación en la lógica de negocio).

@@ -1,0 +1,90 @@
+// Usar la base de datos
+use ecommerce_ropa;
+
+// Usuarios
+db.usuario.insertOne({
+  nombre: "Juan Pérez",
+  email: "juan@correo.com",
+  contraseña: "hashed_pass",
+  fecha_creacion: new Date(),
+  direcciones_envio: [
+    {
+      direccion: "Av. Lima 123",
+      ciudad: "Lima",
+      pais: "Perú",
+      codigo_postal: "15001"
+    }
+  ],
+  carrito: {
+    items: [
+      {
+        nombre_producto: "Polera Negra",
+        talla: "M",
+        color: "Negro",
+        cantidad: 1
+      }
+    ]
+  },
+  notificaciones: [
+    {
+      mensaje: "Tu pedido ha sido enviado",
+      leido: false,
+      fecha: new Date()
+    }
+  ],
+  cupones_usados: [
+    {
+      codigo: "DESC10",
+      fecha_uso: new Date()
+    }
+  ]
+});
+
+// Productos (con variantes y stock)
+db.producto.insertOne({
+  nombre: "Polera Negra",
+  categoria: "Hombre",
+  descripcion: "Polera básica de algodón",
+  imagenes: [
+    "img/polera1.jpg",
+    "img/polera2.jpg"
+  ],
+  variantes: [
+    {
+      talla: "S",
+      color: "Negro",
+      stock: 10
+    },
+    {
+      talla: "M",
+      color: "Negro",
+      stock: 8
+    }
+  ]
+});
+
+// Orden con items y pago embebido
+db.orden.insertOne({
+  id_usuario: ObjectId("..."),
+  direccion_envio: {
+    direccion: "Av. Lima 123",
+    ciudad: "Lima",
+    pais: "Perú",
+    codigo_postal: "15001"
+  },
+  items: [
+    {
+      nombre_producto: "Polera Negra",
+      talla: "M",
+      color: "Negro",
+      cantidad: 1,
+      precio_unitario: 45.00
+    }
+  ],
+  pago: {
+    metodo: "Tarjeta",
+    estado: "Pagado",
+    fecha: new Date()
+  },
+  fecha_orden: new Date()
+});

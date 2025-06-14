@@ -1,0 +1,61 @@
+-- Crear base de datos
+CREATE DATABASE ecommerce_ropa;
+
+-- Conectar a la base
+\c ecommerce_ropa;
+
+-- Tabla de usuarios
+CREATE TABLE usuario (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    contraseña VARCHAR(255),
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Direcciones de envío
+CREATE TABLE direccion_envio (
+    id SERIAL PRIMARY KEY,
+    id_usuario INT REFERENCES usuario(id),
+    direccion TEXT,
+    ciudad VARCHAR(100),
+    pais VARCHAR(100),
+    codigo_postal VARCHAR(20)
+);
+
+-- Categorías de productos
+CREATE TABLE categoria (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) UNIQUE
+);
+
+-- Colores
+CREATE TABLE color (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) UNIQUE
+);
+
+-- Tallas
+CREATE TABLE talla (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) UNIQUE
+);
+
+-- Cupones
+CREATE TABLE cupon (
+    id SERIAL PRIMARY KEY,
+    codigo VARCHAR(50) UNIQUE,
+    descuento NUMERIC(5,2),
+    fecha_expiracion DATE,
+    uso_maximo INT
+);
+
+-- Stock por combinación
+CREATE TABLE stock_producto (
+    id SERIAL PRIMARY KEY,
+    nombre_producto VARCHAR(100),
+    id_categoria INT REFERENCES categoria(id),
+    id_color INT REFERENCES color(id),
+    id_talla INT REFERENCES talla(id),
+    stock INT
+);
