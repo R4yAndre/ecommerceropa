@@ -28,10 +28,10 @@ const getStockProductoById = async (req, res) => {
 // Crear nuevo registro de stock
 const crearStockProducto = async (req, res) => {
   try {
-    const { id_producto, talla, color, cantidad } = req.body;
+    const { producto_id, talla_id, color_id, stock } = req.body;
     const result = await pg.query(
-      'INSERT INTO stock_producto (id_producto, talla, color, cantidad) VALUES ($1, $2, $3, $4) RETURNING *',
-      [id_producto, talla, color, cantidad]
+      'INSERT INTO stock_producto (producto_id, talla_id, color_id, stock) VALUES ($1, $2, $3, $4) RETURNING *',
+      [producto_id, talla_id, color_id, stock]
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
@@ -40,13 +40,13 @@ const crearStockProducto = async (req, res) => {
   }
 };
 
-// Actualizar registro de stock (PUT)
+// Actualizar completamente un registro de stock (PUT)
 const actualizarStockProducto = async (req, res) => {
   try {
-    const { id_producto, talla, color, cantidad } = req.body;
+    const { producto_id, talla_id, color_id, stock } = req.body;
     const result = await pg.query(
-      'UPDATE stock_producto SET id_producto = $1, talla = $2, color = $3, cantidad = $4 WHERE id = $5 RETURNING *',
-      [id_producto, talla, color, cantidad, req.params.id]
+      'UPDATE stock_producto SET producto_id = $1, talla_id = $2, color_id = $3, stock = $4 WHERE id = $5 RETURNING *',
+      [producto_id, talla_id, color_id, stock, req.params.id]
     );
     if (result.rows.length === 0) {
       return res.status(404).json({ error: 'Stock no encontrado' });
@@ -58,7 +58,7 @@ const actualizarStockProducto = async (req, res) => {
   }
 };
 
-// Modificar parcialmente (PATCH)
+// Modificar parcialmente un registro de stock (PATCH)
 const modificarParcialStockProducto = async (req, res) => {
   try {
     const campos = Object.keys(req.body);
@@ -85,7 +85,7 @@ const modificarParcialStockProducto = async (req, res) => {
   }
 };
 
-// Eliminar registro de stock
+// Eliminar un registro de stock
 const eliminarStockProducto = async (req, res) => {
   try {
     const result = await pg.query('DELETE FROM stock_producto WHERE id = $1 RETURNING *', [req.params.id]);

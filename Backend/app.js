@@ -8,9 +8,9 @@ const cuponRoutes = require('./routes/cuponRoutes');
 const categoriaRoutes = require('./routes/categoriaRoutes');
 const colorRoutes = require('./routes/colorRoutes');
 const tallaRoutes = require('./routes/tallaRoutes');
-const mongoService = require('./services/mongoService');
-const usuarioMongoRoutes = require('./routes/usuarioMongoRoutes');
-const productoMongoRoutes = require('./routes/productoMongoRoutes');
+const productoRoutes = require('./routes/productoRoutes');
+const ordenRoutes = require('./routes/ordenRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
@@ -25,7 +25,8 @@ app.use('/api/cupones', cuponRoutes);
 app.use('/api/categorias', categoriaRoutes);
 app.use('/api/colores', colorRoutes);
 app.use('/api/tallas', tallaRoutes);
-app.use('/api/mongo/usuarios', usuarioMongoRoutes);
-app.use('/api/mongo/productos', productoMongoRoutes);
+app.use('/api/productos', productoRoutes);
+app.use('/api/ordenes', ordenRoutes);
+app.use('/api/auth', authRoutes);
 
 module.exports = app;

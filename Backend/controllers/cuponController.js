@@ -11,7 +11,7 @@ const getCupones = async (req, res) => {
   }
 };
 
-// Obtener un cupón por ID
+// Obtener cupón por ID
 const getCuponById = async (req, res) => {
   try {
     const result = await pg.query('SELECT * FROM cupon WHERE id = $1', [req.params.id]);
@@ -25,13 +25,13 @@ const getCuponById = async (req, res) => {
   }
 };
 
-// Crear un nuevo cupón
+// Crear nuevo cupón
 const crearCupon = async (req, res) => {
   try {
-    const { codigo, descripcion, porcentaje_descuento, fecha_inicio, fecha_fin } = req.body;
+    const { codigo, descuento, fecha_expiracion, uso_maximo } = req.body;
     const result = await pg.query(
-      'INSERT INTO cupon (codigo, descripcion, porcentaje_descuento, fecha_inicio, fecha_fin) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-      [codigo, descripcion, porcentaje_descuento, fecha_inicio, fecha_fin]
+      'INSERT INTO cupon (codigo, descuento, fecha_expiracion, uso_maximo) VALUES ($1, $2, $3, $4) RETURNING *',
+      [codigo, descuento, fecha_expiracion, uso_maximo]
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
@@ -43,10 +43,10 @@ const crearCupon = async (req, res) => {
 // Actualizar cupón completo
 const actualizarCupon = async (req, res) => {
   try {
-    const { codigo, descripcion, porcentaje_descuento, fecha_inicio, fecha_fin } = req.body;
+    const { codigo, descuento, fecha_expiracion, uso_maximo } = req.body;
     const result = await pg.query(
-      'UPDATE cupon SET codigo = $1, descripcion = $2, porcentaje_descuento = $3, fecha_inicio = $4, fecha_fin = $5 WHERE id = $6 RETURNING *',
-      [codigo, descripcion, porcentaje_descuento, fecha_inicio, fecha_fin, req.params.id]
+      'UPDATE cupon SET codigo = $1, descuento = $2, fecha_expiracion = $3, uso_maximo = $4 WHERE id = $5 RETURNING *',
+      [codigo, descuento, fecha_expiracion, uso_maximo, req.params.id]
     );
     if (result.rows.length === 0) {
       return res.status(404).json({ error: 'Cupón no encontrado' });
@@ -58,7 +58,7 @@ const actualizarCupon = async (req, res) => {
   }
 };
 
-// Modificar parcialmente un cupón
+// Modificar parcialmente cupón
 const modificarParcialCupon = async (req, res) => {
   try {
     const campos = Object.keys(req.body);
@@ -85,7 +85,7 @@ const modificarParcialCupon = async (req, res) => {
   }
 };
 
-// Eliminar un cupón
+// Eliminar cupón
 const eliminarCupon = async (req, res) => {
   try {
     const result = await pg.query('DELETE FROM cupon WHERE id = $1 RETURNING *', [req.params.id]);

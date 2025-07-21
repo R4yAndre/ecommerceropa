@@ -28,10 +28,10 @@ const getCategoriaById = async (req, res) => {
 // Crear nueva categoría
 const crearCategoria = async (req, res) => {
   try {
-    const { nombre, descripcion } = req.body;
+    const { nombre } = req.body;
     const result = await pg.query(
-      'INSERT INTO categoria (nombre, descripcion) VALUES ($1, $2) RETURNING *',
-      [nombre, descripcion]
+      'INSERT INTO categoria (nombre) VALUES ($1) RETURNING *',
+      [nombre]
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
@@ -43,10 +43,10 @@ const crearCategoria = async (req, res) => {
 // Actualizar categoría completa (PUT)
 const actualizarCategoria = async (req, res) => {
   try {
-    const { nombre, descripcion } = req.body;
+    const { nombre } = req.body;
     const result = await pg.query(
-      'UPDATE categoria SET nombre = $1, descripcion = $2 WHERE id = $3 RETURNING *',
-      [nombre, descripcion, req.params.id]
+      'UPDATE categoria SET nombre = $1 WHERE id = $2 RETURNING *',
+      [nombre, req.params.id]
     );
     if (result.rows.length === 0) {
       return res.status(404).json({ error: 'Categoría no encontrada' });

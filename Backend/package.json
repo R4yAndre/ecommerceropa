@@ -11,10 +11,12 @@
   "license": "ISC",
   "description": "E-Commerce de venta de ropa de una tienda pequeña (PYME)",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "mongoose": "^8.16.0",
-    "pg": "^8.16.2"
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.2",
+    "sequelize": "^6.37.7"
   },
   "devDependencies": {
     "eslint": "^9.26.0",
