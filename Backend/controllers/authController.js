@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const Usuario = require('../models/Usuario');
 
-const SECRET_KEY = 'tu_clave_secreta_super_segura'; // puedes moverla a config si deseas
+const SECRET_KEY = 'clave';
 
 const login = async (req, res) => {
   try {
