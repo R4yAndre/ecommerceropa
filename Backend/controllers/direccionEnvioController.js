@@ -40,13 +40,23 @@ const crearDireccion = async (req, res) => {
 const actualizarDireccion = async (req, res) => {
   try {
     const { id_usuario, direccion, ciudad, pais, codigo_postal } = req.body;
+
+    // Validación de campos obligatorios
+    if (!id_usuario || !direccion || !ciudad || !pais || !codigo_postal) {
+      return res.status(400).json({
+        error: 'Todos los campos son obligatorios: id_usuario, direccion, ciudad, pais, codigo_postal'
+      });
+    }
+
     const result = await pg.query(
       'UPDATE direccion_envio SET id_usuario = $1, direccion = $2, ciudad = $3, pais = $4, codigo_postal = $5 WHERE id = $6 RETURNING *',
       [id_usuario, direccion, ciudad, pais, codigo_postal, req.params.id]
     );
+
     if (result.rows.length === 0) {
       return res.status(404).json({ error: 'Dirección no encontrada' });
     }
+
     res.json(result.rows[0]);
   } catch (err) {
     console.error(err);

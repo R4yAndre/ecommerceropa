@@ -52,11 +52,20 @@ const actualizarProducto = async (req, res) => {
   try {
     const { nombre, descripcion, precio, categoria_id } = req.body;
 
+    // Validar campos obligatorios
+    if (!nombre || !descripcion || !precio || !categoria_id) {
+      return res.status(400).json({
+        error: 'Todos los campos son obligatorios: nombre, descripcion, precio, categoria_id'
+      });
+    }
+
+    // Verificar que la categoría exista
     const categoria = await pg.query('SELECT id FROM categoria WHERE id = $1', [categoria_id]);
     if (categoria.rowCount === 0) {
       return res.status(400).json({ error: 'El ID de categoría no está registrado en la tabla categoria' });
     }
 
+    // Actualizar producto
     const result = await pg.query(
       'UPDATE producto SET nombre = $1, descripcion = $2, precio = $3, categoria_id = $4 WHERE id = $5 RETURNING *',
       [nombre, descripcion, precio, categoria_id, req.params.id]

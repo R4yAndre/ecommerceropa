@@ -44,13 +44,28 @@ const crearCupon = async (req, res) => {
 const actualizarCupon = async (req, res) => {
   try {
     const { codigo, descuento, fecha_expiracion, uso_maximo } = req.body;
+
+    // Validar que todos los campos estén presentes
+    if (
+      codigo === undefined ||
+      descuento === undefined ||
+      fecha_expiracion === undefined ||
+      uso_maximo === undefined
+    ) {
+      return res.status(400).json({
+        error: 'Todos los campos son obligatorios: codigo, descuento, fecha_expiracion, uso_maximo'
+      });
+    }
+
     const result = await pg.query(
       'UPDATE cupon SET codigo = $1, descuento = $2, fecha_expiracion = $3, uso_maximo = $4 WHERE id = $5 RETURNING *',
       [codigo, descuento, fecha_expiracion, uso_maximo, req.params.id]
     );
+
     if (result.rows.length === 0) {
       return res.status(404).json({ error: 'Cupón no encontrado' });
     }
+
     res.json(result.rows[0]);
   } catch (err) {
     console.error(err);

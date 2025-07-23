@@ -44,13 +44,28 @@ const crearStockProducto = async (req, res) => {
 const actualizarStockProducto = async (req, res) => {
   try {
     const { producto_id, talla_id, color_id, stock } = req.body;
+
+    // Validación: asegurar que todos los campos estén presentes
+    if (
+      producto_id === undefined ||
+      talla_id === undefined ||
+      color_id === undefined ||
+      stock === undefined
+    ) {
+      return res.status(400).json({
+        error: 'Todos los campos son obligatorios: producto_id, talla_id, color_id, stock'
+      });
+    }
+
     const result = await pg.query(
       'UPDATE stock_producto SET producto_id = $1, talla_id = $2, color_id = $3, stock = $4 WHERE id = $5 RETURNING *',
       [producto_id, talla_id, color_id, stock, req.params.id]
     );
+
     if (result.rows.length === 0) {
       return res.status(404).json({ error: 'Stock no encontrado' });
     }
+
     res.json(result.rows[0]);
   } catch (err) {
     console.error(err);

@@ -9,6 +9,11 @@ const {
   patchOrden
 } = require('../controllers/ordenController');
 
+const authMiddleware = require('../middlewares/authMiddleware');
+
+// Aplica el middleware a todas las rutas del router
+router.use(authMiddleware);
+
 router.get('/', getOrdenes);
 router.get('/:id', getOrdenById);
 router.post('/', crearOrden);

@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const colorController = require('../controllers/colorController');
+const authMiddleware = require('../middlewares/authMiddleware');
+
+// Aplica el middleware a todas las rutas del router
+router.use(authMiddleware);
 
 router.get('/', colorController.getColores);
 router.get('/:id', colorController.getColorById);

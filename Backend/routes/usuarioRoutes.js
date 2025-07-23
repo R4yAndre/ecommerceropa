@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const usuarioController = require('../controllers/usuarioController');
+const authMiddleware = require('../middlewares/authMiddleware');
+
+// Aplica el middleware a todas las rutas del router
+router.use(authMiddleware);
 
 router.get('/', usuarioController.getUsuarios);
 router.get('/:id', usuarioController.getUsuarioById);

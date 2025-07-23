@@ -48,6 +48,14 @@ const actualizarUsuario = async (req, res) => {
     if (!usuario) return res.status(404).json({ error: 'Usuario no encontrado' });
 
     const { nombre, email, contraseña, fecha_creacion } = req.body;
+
+    // Validación: todos los campos deben estar presentes
+    if (!nombre || !email || !contraseña || !fecha_creacion) {
+      return res.status(400).json({
+        error: 'Todos los campos son obligatorios: nombre, email, contraseña, fecha_creacion'
+      });
+    }
+
     await usuario.update({ nombre, email, contraseña, fecha_creacion });
     res.json(usuario);
   } catch (error) {
