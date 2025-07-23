@@ -1,15 +1,16 @@
 const { Sequelize } = require('sequelize');
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-// Conexión manual (modifica según tus datos)
 const sequelize = new Sequelize(
-  'ecommerce_ropa', // Nombre de la base de datos
-  'postgres',          // Usuario de PostgreSQL
-  'samurai202',       // Contraseña del usuario
+  process.env.PG_DATABASE,
+  process.env.PG_USER,
+  process.env.PG_PASSWORD,
   {
-    host: 'localhost', // o IP del servidor
-    port: 5432,        // Puerto por defecto de PostgreSQL
+    host: process.env.PG_HOST,
+    port: process.env.PG_PORT,
     dialect: 'postgres',
-    logging: false,    // Cambiar a true para ver logs SQL
+    logging: false,
   }
 );
 

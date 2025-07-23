@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const Usuario = require('../models/Usuario'); // Modelo Sequelize
 
 // Obtener todos los usuarios
@@ -61,7 +62,14 @@ const modificarParcialUsuario = async (req, res) => {
     const usuario = await Usuario.findByPk(req.params.id);
     if (!usuario) return res.status(404).json({ error: 'Usuario no encontrado' });
 
-    await usuario.update(req.body); // Solo actualiza campos presentes en req.body
+    const datosActualizados = { ...req.body };
+
+    if (datosActualizados.contraseña) {
+      const salt = await bcrypt.genSalt(10);
+      datosActualizados.contraseña = await bcrypt.hash(datosActualizados.contraseña, salt);
+    }
+
+    await usuario.update(datosActualizados);
     res.json(usuario);
   } catch (error) {
     console.error(error);
