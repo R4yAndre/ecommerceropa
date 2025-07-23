@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const Usuario = require('../models/Usuario');
 
-const SECRET_KEY = 'clave';
+const SECRET_KEY = '07aa163743a9681c02eeeca106e2ebb1abe556e11ab2046c2662c8f6326f63bf';
 
 const login = async (req, res) => {
   try {
